@@ -16,3 +16,14 @@ enum GAFError: Error {
     case errorPArsingData
     case sessionTokenMissed
 }
+
+/// Conforma al protocolo Error, lo que permite usarlo en throw y catch.
+/*
+ Si hay error en la conexión, retorna .serverErrot(error).
+
+ Si el código HTTP no es 200, retorna .responseError(code).
+
+ Si no hay datos en la respuesta, retorna .noDataReceived.
+
+ Si falla la decodificación JSON, retorna .errorPArsingData.
+ */

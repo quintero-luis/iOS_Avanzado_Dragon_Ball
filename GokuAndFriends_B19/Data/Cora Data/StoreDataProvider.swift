@@ -11,12 +11,12 @@ import CoreData
 
 // Enum para indicar los tipos de persistencia de nuestro BBDD de Core Data
 enum TypePersistence {
-    case disk
-    case inMemoery
+    case disk        // Guarda los datos en disco
+    case inMemoery   // Guarda los datos solo en memoria (ideal para pruebas)
 }
 
 class StoreDataProvider {
-    
+    // Singleton para uso general
     static let shared: StoreDataProvider = .init()
     
 //    Usarmos la directiva de compilación DEBUG crear un singleton con persistencia en memoria y que
@@ -24,15 +24,17 @@ class StoreDataProvider {
 #if DEBUG
     static let sharedTesting: StoreDataProvider = .init(persistence: .inMemoery)
 #endif
-    
+    // Contenedor principal de Core Data, administra el modelo y los contextos
     let persistentContainer: NSPersistentContainer
     
+    // Contexto principal que usamos para leer/escribir en la base de datos
     lazy var context: NSManagedObjectContext = {
         let viewContext = self.persistentContainer.viewContext
+        // Política de merge que da prioridad a los objetos en memoria en caso de conflicto
         viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         return viewContext
     }()
-    
+    // Constructor privado para que solo se use la instancia shared
     // como es un singleton el constructor es privado
     private init(persistence: TypePersistence = .disk) {
         // URL.applicationSupportDirectory
@@ -40,11 +42,14 @@ class StoreDataProvider {
         // Se puede acceder al simulador desde finder
         
         self.persistentContainer = NSPersistentContainer(name: "Model")
+        
+        // Si usamos persistencia en memoria (ej. en tests), redirigimos la URL del store
         if persistence == .inMemoery {
             let persistentStore = self.persistentContainer.persistentStoreDescriptions.first
             // para persistir en memoria asignamos la url al persistent Store
             persistentStore?.url = URL(filePath: "dev/null")
         }
+        // Cargamos el store de Core Data y en caso de fallo, detenemos la ejecución
         self.persistentContainer.loadPersistentStores { _, error in
             if let error {
                 fatalError("Core data couldn't load BBDD from Model \(error)")
@@ -52,6 +57,7 @@ class StoreDataProvider {
         }
     }
     
+    // Guarda los cambios del contexto en la base de datos
     func saveContext() {
         context.perform {  // Noaseguramos de usar el contextos en thread donde fué creado
             guard self.context.hasChanges else { return }
@@ -66,7 +72,7 @@ class StoreDataProvider {
 
 extension StoreDataProvider {
     
-    // Obtiene los heroes de la BBD aplicando un filtro si se envía
+    // Devuelve una lista de héroes aplicando un filtro opcional y orden por nombre
     func fetchHeroes(filter: NSPredicate?, sortAscending: Bool = true) -> [MOHero] {
         let request = MOHero.fetchRequest()
         let sortDescriptor = NSSortDescriptor(keyPath: \MOHero.name, ascending: sortAscending)
@@ -79,10 +85,12 @@ extension StoreDataProvider {
         return (try? context.fetch(request)) ?? []
     }
     
+    /// Devuelve el número total de héroes en la base de datos
     func numHeroes() -> Int {
         return (try? context.count(for: MOHero.fetchRequest())) ?? -1
     }
     
+    /// Inserta una lista de héroes en la base de datos y guarda los cambios
     // Inserta heroes en contexto y persiste en BBDD con saveContext()
     func insert(heroes: [ApiHero]) {
         for hero in heroes {

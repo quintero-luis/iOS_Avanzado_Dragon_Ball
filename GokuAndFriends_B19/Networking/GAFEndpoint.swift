@@ -16,11 +16,12 @@ enum HTTPMethods: String {
 // - El httpmethod
 // - Params si son necesarios 
 enum GAFEndpoint {
-    case heroes(name: String)
-    case locations(id: String)
+    /// Define dos endpoints con sus respectivos parámetros:
+    case heroes(name: String) // Para buscar héroes.
+    case locations(id: String) // Para obtener la ubicación de un héroe.
     
     
-    // VAriable para indiocar si el endpoint debe llevar cavecera de autenticación con el token
+    /// Variable para indiocar si el endpoint debe llevar cabecera de autenticación con el token
     var isAuthoritationREquired: Bool {
         switch self {
         case .heroes, .locations:
@@ -28,6 +29,9 @@ enum GAFEndpoint {
         }
     }
     
+    /// dragonball.keepcoding.education es el dominio del servidor, y para cosas específicas se usa endpoints
+    /// Aquí, "/api/heroes/all" es el endpoint que devuelve la lista de héroes.
+    /// Devuelve la ruta específica de cada endpoint.
     func path() -> String {
         switch self {
         case .heroes:
@@ -37,6 +41,8 @@ enum GAFEndpoint {
         }
     }
     
+    /// Devuelve el método HTTP Ambos endpoints usan POST.
+    /// Retorna el método como String ("POST").
     func httpMethod() -> String {
         switch self {
         case .heroes, .locations:
@@ -44,6 +50,9 @@ enum GAFEndpoint {
         }
     }
     
+    /// Devuelve los parámetros en formato JSON (Data)
+    /// Convierte los parámetros (name, id) a JSON (Data) para enviarlos en el cuerpo de la solicitud.
+    /// Usa JSONSerialization.data(withJSONObject:) para hacer la conversión.
     func params() -> Data? {
         switch self {
         case .heroes(name: let name):
