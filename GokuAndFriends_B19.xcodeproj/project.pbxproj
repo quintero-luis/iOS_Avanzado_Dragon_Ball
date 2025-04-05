@@ -1,0 +1,953 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
+		F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129652D9EF8A400B65234 /* HeroDetailController.swift */; };
+		F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */; };
+		F301296D2D9F0A6200B65234 /* HeroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301296C2D9F0A6200B65234 /* HeroAnnotation.swift */; };
+		F301296F2D9F104200B65234 /* HeroAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301296E2D9F104200B65234 /* HeroAnnotationView.swift */; };
+		F30129712D9F17FA00B65234 /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129702D9F17FA00B65234 /* HeroDetailViewModel.swift */; };
+		F33610FD2D9B0839009EF9A7 /* HeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33610FC2D9B0839009EF9A7 /* HeroesUseCase.swift */; };
+		F33611012D9B0C2B009EF9A7 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33610FF2D9B0C2B009EF9A7 /* HeroCell.swift */; };
+		F33611022D9B0C2B009EF9A7 /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F33611002D9B0C2B009EF9A7 /* HeroCell.xib */; };
+		F33611042D9B0FD1009EF9A7 /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33611032D9B0FD1009EF9A7 /* HeroesViewModel.swift */; };
+		F336110A2D9B2588009EF9A7 /* StoreDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33611092D9B2588009EF9A7 /* StoreDataProviderTests.swift */; };
+		F33611102D9B32EF009EF9A7 /* ApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336110F2D9B32EF009EF9A7 /* ApiProviderTest.swift */; };
+		F33611132D9B3415009EF9A7 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33611122D9B3415009EF9A7 /* MockURLProtocol.swift */; };
+		F3481F912D9C585700385A9B /* Heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = F3481F902D9C584F00385A9B /* Heroes.json */; };
+		F3481F952D9C64A500385A9B /* HeroesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481F942D9C64A500385A9B /* HeroesUseCaseTests.swift */; };
+		F3481F992D9C6DDA00385A9B /* HeroesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481F982D9C6DDA00385A9B /* HeroesViewModelTests.swift */; };
+		F3481F9C2D9C7A4500385A9B /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F3481F9B2D9C7A4500385A9B /* KeychainSwift */; };
+		F3481F9E2D9C7C1600385A9B /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481F9D2D9C7C1600385A9B /* SecureDataProvider.swift */; };
+		F3481FA02D9C872700385A9B /* MockSecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3481F9F2D9C872700385A9B /* MockSecureDataProvider.swift */; };
+		F3A0023B2D95CE8400146194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002342D95CE8400146194 /* AppDelegate.swift */; };
+		F3A0023C2D95CE8400146194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002392D95CE8400146194 /* SceneDelegate.swift */; };
+		F3A0023D2D95CE8400146194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A002352D95CE8400146194 /* Assets.xcassets */; };
+		F3A0023F2D95CE8400146194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3A002382D95CE8400146194 /* LaunchScreen.storyboard */; };
+		F3A002432D95CEB000146194 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002412D95CEB000146194 /* SplashController.swift */; };
+		F3A002442D95CEB000146194 /* SplashController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A002422D95CEB000146194 /* SplashController.xib */; };
+		F3A002472D95CED100146194 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A002462D95CED100146194 /* LoginController.xib */; };
+		F3A002482D95CED100146194 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002452D95CED100146194 /* LoginController.swift */; };
+		F3A0024C2D95D0AF00146194 /* ApiHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0024B2D95D0AF00146194 /* ApiHero.swift */; };
+		F3A0024E2D95D0D400146194 /* ApiHeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0024D2D95D0D400146194 /* ApiHeroLocation.swift */; };
+		F3A002522D95D42200146194 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3A002502D95D42200146194 /* Model.xcdatamodeld */; };
+		F3A0025B2D95D73000146194 /* MOHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002532D95D73000146194 /* MOHero.swift */; };
+		F3A0025D2D95D73000146194 /* MOHeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002552D95D73000146194 /* MOHeroLocation.swift */; };
+		F3A002612D95D96100146194 /* StoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0025F2D95D96100146194 /* StoreDataProvider.swift */; };
+		F3A002672D95F3FE00146194 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002652D95F3FE00146194 /* ApiProvider.swift */; };
+		F3A002692D95FEB800146194 /* GAFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002682D95FEB800146194 /* GAFError.swift */; };
+		F3A0026B2D95FECC00146194 /* GAFEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0026A2D95FECC00146194 /* GAFEndpoint.swift */; };
+		F3A0026D2D95FEDB00146194 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0026C2D95FEDB00146194 /* RequestBuilder.swift */; };
+		F3A002712D95FF5E00146194 /* HeroesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0026F2D95FF5E00146194 /* HeroesController.swift */; };
+		F3A002722D95FF5E00146194 /* HeroesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A002702D95FF5E00146194 /* HeroesController.xib */; };
+		F3A002762D96012D00146194 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002752D96012D00146194 /* Hero.swift */; };
+		F3A002782D96016A00146194 /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A002772D96016A00146194 /* HeroLocation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3A002172D95CE1D00146194 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3A001F82D95CE1C00146194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3A001FF2D95CE1C00146194;
+			remoteInfo = GokuAndFriends_B19;
+		};
+		F3A002212D95CE1D00146194 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3A001F82D95CE1C00146194 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3A001FF2D95CE1C00146194;
+			remoteInfo = GokuAndFriends_B19;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
+		F30129662D9EF8A400B65234 /* HeroDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailController.xib; sourceTree = "<group>"; };
+		F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
+		F301296C2D9F0A6200B65234 /* HeroAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotation.swift; sourceTree = "<group>"; };
+		F301296E2D9F104200B65234 /* HeroAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotationView.swift; sourceTree = "<group>"; };
+		F30129702D9F17FA00B65234 /* HeroDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewModel.swift; sourceTree = "<group>"; };
+		F33610FC2D9B0839009EF9A7 /* HeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCase.swift; sourceTree = "<group>"; };
+		F33610FF2D9B0C2B009EF9A7 /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		F33611002D9B0C2B009EF9A7 /* HeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCell.xib; sourceTree = "<group>"; };
+		F33611032D9B0FD1009EF9A7 /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		F33611052D9B1801009EF9A7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		F33611092D9B2588009EF9A7 /* StoreDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataProviderTests.swift; sourceTree = "<group>"; };
+		F336110D2D9B2A95009EF9A7 /* GokuAndFriends_B19.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = GokuAndFriends_B19.xctestplan; sourceTree = "<group>"; };
+		F336110F2D9B32EF009EF9A7 /* ApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTest.swift; sourceTree = "<group>"; };
+		F33611122D9B3415009EF9A7 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		F3481F902D9C584F00385A9B /* Heroes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Heroes.json; sourceTree = "<group>"; };
+		F3481F942D9C64A500385A9B /* HeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseTests.swift; sourceTree = "<group>"; };
+		F3481F982D9C6DDA00385A9B /* HeroesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModelTests.swift; sourceTree = "<group>"; };
+		F3481F9D2D9C7C1600385A9B /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
+		F3481F9F2D9C872700385A9B /* MockSecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSecureDataProvider.swift; sourceTree = "<group>"; };
+		F3A002002D95CE1C00146194 /* GokuAndFriends_B19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GokuAndFriends_B19.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A002162D95CE1D00146194 /* GokuAndFriends_B19Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GokuAndFriends_B19Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A002202D95CE1D00146194 /* GokuAndFriends_B19UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GokuAndFriends_B19UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A002342D95CE8400146194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F3A002352D95CE8400146194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3A002362D95CE8400146194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A002372D95CE8400146194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3A002392D95CE8400146194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F3A002412D95CEB000146194 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		F3A002422D95CEB000146194 /* SplashController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashController.xib; sourceTree = "<group>"; };
+		F3A002452D95CED100146194 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F3A002462D95CED100146194 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		F3A0024B2D95D0AF00146194 /* ApiHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHero.swift; sourceTree = "<group>"; };
+		F3A0024D2D95D0D400146194 /* ApiHeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHeroLocation.swift; sourceTree = "<group>"; };
+		F3A002512D95D42200146194 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F3A002532D95D73000146194 /* MOHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOHero.swift; sourceTree = "<group>"; };
+		F3A002552D95D73000146194 /* MOHeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOHeroLocation.swift; sourceTree = "<group>"; };
+		F3A0025F2D95D96100146194 /* StoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataProvider.swift; sourceTree = "<group>"; };
+		F3A002652D95F3FE00146194 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		F3A002682D95FEB800146194 /* GAFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFError.swift; sourceTree = "<group>"; };
+		F3A0026A2D95FECC00146194 /* GAFEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAFEndpoint.swift; sourceTree = "<group>"; };
+		F3A0026C2D95FEDB00146194 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		F3A0026F2D95FF5E00146194 /* HeroesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesController.swift; sourceTree = "<group>"; };
+		F3A002702D95FF5E00146194 /* HeroesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesController.xib; sourceTree = "<group>"; };
+		F3A002752D96012D00146194 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		F3A002772D96016A00146194 /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F3A002232D95CE1D00146194 /* GokuAndFriends_B19UITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GokuAndFriends_B19UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3A001FD2D95CE1C00146194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3481F9C2D9C7A4500385A9B /* KeychainSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A002132D95CE1D00146194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A0021D2D95CE1D00146194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F30129632D9EF82900B65234 /* HeroDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F301296B2D9F0A4200B65234 /* Views */,
+				F30129652D9EF8A400B65234 /* HeroDetailController.swift */,
+				F30129702D9F17FA00B65234 /* HeroDetailViewModel.swift */,
+				F30129662D9EF8A400B65234 /* HeroDetailController.xib */,
+			);
+			path = HeroDetail;
+			sourceTree = "<group>";
+		};
+		F30129642D9EF84600B65234 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002412D95CEB000146194 /* SplashController.swift */,
+				F3A002452D95CED100146194 /* LoginController.swift */,
+				F3A002462D95CED100146194 /* LoginController.xib */,
+				F3A002422D95CEB000146194 /* SplashController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F301296B2D9F0A4200B65234 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F301296C2D9F0A6200B65234 /* HeroAnnotation.swift */,
+				F301296E2D9F104200B65234 /* HeroAnnotationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F33610FB2D9B0832009EF9A7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F33610FC2D9B0839009EF9A7 /* HeroesUseCase.swift */,
+				F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F33610FE2D9B0BFF009EF9A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F33610FF2D9B0C2B009EF9A7 /* HeroCell.swift */,
+				F33611002D9B0C2B009EF9A7 /* HeroCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F33611072D9B2530009EF9A7 /* GokuAndFriends_B19Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F336110B2D9B25A4009EF9A7 /* Data */,
+				F336110E2D9B32C0009EF9A7 /* NetWorking */,
+				F3481F922D9C647F00385A9B /* Domain */,
+				F3481F962D9C6DAA00385A9B /* Presentation */,
+				F3481F8F2D9C583F00385A9B /* Stubs */,
+			);
+			path = GokuAndFriends_B19Tests;
+			sourceTree = "<group>";
+		};
+		F336110B2D9B25A4009EF9A7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F336110C2D9B25AD009EF9A7 /* Core Data */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F336110C2D9B25AD009EF9A7 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F9F2D9C872700385A9B /* MockSecureDataProvider.swift */,
+				F33611092D9B2588009EF9A7 /* StoreDataProviderTests.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		F336110E2D9B32C0009EF9A7 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				F33611112D9B33F1009EF9A7 /* Mock */,
+				F336110F2D9B32EF009EF9A7 /* ApiProviderTest.swift */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		F33611112D9B33F1009EF9A7 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F33611122D9B3415009EF9A7 /* MockURLProtocol.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		F3481F8F2D9C583F00385A9B /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F902D9C584F00385A9B /* Heroes.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		F3481F922D9C647F00385A9B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F932D9C648700385A9B /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F3481F932D9C648700385A9B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F942D9C64A500385A9B /* HeroesUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F3481F962D9C6DAA00385A9B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F972D9C6DB700385A9B /* Heroes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F3481F972D9C6DB700385A9B /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				F3481F982D9C6DDA00385A9B /* HeroesViewModelTests.swift */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		F3A001F72D95CE1C00146194 = {
+			isa = PBXGroup;
+			children = (
+				F336110D2D9B2A95009EF9A7 /* GokuAndFriends_B19.xctestplan */,
+				F3A0023A2D95CE8400146194 /* GokuAndFriends_B19 */,
+				F33611072D9B2530009EF9A7 /* GokuAndFriends_B19Tests */,
+				F3A002232D95CE1D00146194 /* GokuAndFriends_B19UITests */,
+				F3A002012D95CE1C00146194 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3A002012D95CE1C00146194 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002002D95CE1C00146194 /* GokuAndFriends_B19.app */,
+				F3A002162D95CE1D00146194 /* GokuAndFriends_B19Tests.xctest */,
+				F3A002202D95CE1D00146194 /* GokuAndFriends_B19UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3A0023A2D95CE8400146194 /* GokuAndFriends_B19 */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002342D95CE8400146194 /* AppDelegate.swift */,
+				F3A002492D95D07300146194 /* Data */,
+				F3A002662D95F3FE00146194 /* Networking */,
+				F3A002732D96010900146194 /* Domain */,
+				F3A002402D95CE8A00146194 /* Presentation */,
+				F3A002352D95CE8400146194 /* Assets.xcassets */,
+				F3A002362D95CE8400146194 /* Info.plist */,
+				F3A002382D95CE8400146194 /* LaunchScreen.storyboard */,
+				F3A002392D95CE8400146194 /* SceneDelegate.swift */,
+			);
+			path = GokuAndFriends_B19;
+			sourceTree = "<group>";
+		};
+		F3A002402D95CE8A00146194 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F30129642D9EF84600B65234 /* Login */,
+				F3A0026E2D95FF2D00146194 /* Heroes */,
+				F30129632D9EF82900B65234 /* HeroDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F3A002492D95D07300146194 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0024F2D95D3F800146194 /* Cora Data */,
+				F3A0024A2D95D08100146194 /* ApiModel */,
+				F3481F9D2D9C7C1600385A9B /* SecureDataProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F3A0024A2D95D08100146194 /* ApiModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3A0024B2D95D0AF00146194 /* ApiHero.swift */,
+				F3A0024D2D95D0D400146194 /* ApiHeroLocation.swift */,
+			);
+			path = ApiModel;
+			sourceTree = "<group>";
+		};
+		F3A0024F2D95D3F800146194 /* Cora Data */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002532D95D73000146194 /* MOHero.swift */,
+				F3A002552D95D73000146194 /* MOHeroLocation.swift */,
+				F3A002502D95D42200146194 /* Model.xcdatamodeld */,
+				F3A0025F2D95D96100146194 /* StoreDataProvider.swift */,
+			);
+			path = "Cora Data";
+			sourceTree = "<group>";
+		};
+		F3A002662D95F3FE00146194 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002682D95FEB800146194 /* GAFError.swift */,
+				F3A0026A2D95FECC00146194 /* GAFEndpoint.swift */,
+				F3A0026C2D95FEDB00146194 /* RequestBuilder.swift */,
+				F3A002652D95F3FE00146194 /* ApiProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F3A0026E2D95FF2D00146194 /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				F33610FE2D9B0BFF009EF9A7 /* Views */,
+				F3A0026F2D95FF5E00146194 /* HeroesController.swift */,
+				F33611032D9B0FD1009EF9A7 /* HeroesViewModel.swift */,
+				F3A002702D95FF5E00146194 /* HeroesController.xib */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		F3A002732D96010900146194 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F33610FB2D9B0832009EF9A7 /* UseCases */,
+				F3A002742D96011100146194 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F3A002742D96011100146194 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3A002752D96012D00146194 /* Hero.swift */,
+				F3A002772D96016A00146194 /* HeroLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3A001FF2D95CE1C00146194 /* GokuAndFriends_B19 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A002292D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19" */;
+			buildPhases = (
+				F3A001FC2D95CE1C00146194 /* Sources */,
+				F3A001FD2D95CE1C00146194 /* Frameworks */,
+				F3A001FE2D95CE1C00146194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GokuAndFriends_B19;
+			packageProductDependencies = (
+				F3481F9B2D9C7A4500385A9B /* KeychainSwift */,
+			);
+			productName = GokuAndFriends_B19;
+			productReference = F3A002002D95CE1C00146194 /* GokuAndFriends_B19.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3A002152D95CE1D00146194 /* GokuAndFriends_B19Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A0022E2D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19Tests" */;
+			buildPhases = (
+				F3A002122D95CE1D00146194 /* Sources */,
+				F3A002132D95CE1D00146194 /* Frameworks */,
+				F3A002142D95CE1D00146194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3A002182D95CE1D00146194 /* PBXTargetDependency */,
+			);
+			name = GokuAndFriends_B19Tests;
+			packageProductDependencies = (
+			);
+			productName = GokuAndFriends_B19Tests;
+			productReference = F3A002162D95CE1D00146194 /* GokuAndFriends_B19Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3A0021F2D95CE1D00146194 /* GokuAndFriends_B19UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A002312D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19UITests" */;
+			buildPhases = (
+				F3A0021C2D95CE1D00146194 /* Sources */,
+				F3A0021D2D95CE1D00146194 /* Frameworks */,
+				F3A0021E2D95CE1D00146194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3A002222D95CE1D00146194 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F3A002232D95CE1D00146194 /* GokuAndFriends_B19UITests */,
+			);
+			name = GokuAndFriends_B19UITests;
+			packageProductDependencies = (
+			);
+			productName = GokuAndFriends_B19UITests;
+			productReference = F3A002202D95CE1D00146194 /* GokuAndFriends_B19UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3A001F82D95CE1C00146194 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					F3A001FF2D95CE1C00146194 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F3A002152D95CE1D00146194 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3A001FF2D95CE1C00146194;
+					};
+					F3A0021F2D95CE1D00146194 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F3A001FF2D95CE1C00146194;
+					};
+				};
+			};
+			buildConfigurationList = F3A001FB2D95CE1C00146194 /* Build configuration list for PBXProject "GokuAndFriends_B19" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3A001F72D95CE1C00146194;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F3481F9A2D9C7A4500385A9B /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F3A002012D95CE1C00146194 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3A001FF2D95CE1C00146194 /* GokuAndFriends_B19 */,
+				F3A002152D95CE1D00146194 /* GokuAndFriends_B19Tests */,
+				F3A0021F2D95CE1D00146194 /* GokuAndFriends_B19UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3A001FE2D95CE1C00146194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A0023D2D95CE8400146194 /* Assets.xcassets in Resources */,
+				F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */,
+				F33611022D9B0C2B009EF9A7 /* HeroCell.xib in Resources */,
+				F3A002472D95CED100146194 /* LoginController.xib in Resources */,
+				F3A002722D95FF5E00146194 /* HeroesController.xib in Resources */,
+				F3A0023F2D95CE8400146194 /* LaunchScreen.storyboard in Resources */,
+				F3A002442D95CEB000146194 /* SplashController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A002142D95CE1D00146194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3481F912D9C585700385A9B /* Heroes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A0021E2D95CE1D00146194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3A001FC2D95CE1C00146194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F301296D2D9F0A6200B65234 /* HeroAnnotation.swift in Sources */,
+				F301296F2D9F104200B65234 /* HeroAnnotationView.swift in Sources */,
+				F3A002612D95D96100146194 /* StoreDataProvider.swift in Sources */,
+				F33611012D9B0C2B009EF9A7 /* HeroCell.swift in Sources */,
+				F3481F9E2D9C7C1600385A9B /* SecureDataProvider.swift in Sources */,
+				F3A0023B2D95CE8400146194 /* AppDelegate.swift in Sources */,
+				F3A002482D95CED100146194 /* LoginController.swift in Sources */,
+				F3A002762D96012D00146194 /* Hero.swift in Sources */,
+				F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */,
+				F3A002672D95F3FE00146194 /* ApiProvider.swift in Sources */,
+				F3A0023C2D95CE8400146194 /* SceneDelegate.swift in Sources */,
+				F3A002692D95FEB800146194 /* GAFError.swift in Sources */,
+				F3A0026B2D95FECC00146194 /* GAFEndpoint.swift in Sources */,
+				F3A0026D2D95FEDB00146194 /* RequestBuilder.swift in Sources */,
+				F3A002782D96016A00146194 /* HeroLocation.swift in Sources */,
+				F33611042D9B0FD1009EF9A7 /* HeroesViewModel.swift in Sources */,
+				F3A002522D95D42200146194 /* Model.xcdatamodeld in Sources */,
+				F3A0024C2D95D0AF00146194 /* ApiHero.swift in Sources */,
+				F3A002432D95CEB000146194 /* SplashController.swift in Sources */,
+				F3A0025B2D95D73000146194 /* MOHero.swift in Sources */,
+				F30129712D9F17FA00B65234 /* HeroDetailViewModel.swift in Sources */,
+				F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */,
+				F3A0025D2D95D73000146194 /* MOHeroLocation.swift in Sources */,
+				F33610FD2D9B0839009EF9A7 /* HeroesUseCase.swift in Sources */,
+				F3A0024E2D95D0D400146194 /* ApiHeroLocation.swift in Sources */,
+				F3A002712D95FF5E00146194 /* HeroesController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A002122D95CE1D00146194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33611132D9B3415009EF9A7 /* MockURLProtocol.swift in Sources */,
+				F3481F952D9C64A500385A9B /* HeroesUseCaseTests.swift in Sources */,
+				F336110A2D9B2588009EF9A7 /* StoreDataProviderTests.swift in Sources */,
+				F3481F992D9C6DDA00385A9B /* HeroesViewModelTests.swift in Sources */,
+				F33611102D9B32EF009EF9A7 /* ApiProviderTest.swift in Sources */,
+				F3481FA02D9C872700385A9B /* MockSecureDataProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A0021C2D95CE1D00146194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3A002182D95CE1D00146194 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3A001FF2D95CE1C00146194 /* GokuAndFriends_B19 */;
+			targetProxy = F3A002172D95CE1D00146194 /* PBXContainerItemProxy */;
+		};
+		F3A002222D95CE1D00146194 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3A001FF2D95CE1C00146194 /* GokuAndFriends_B19 */;
+			targetProxy = F3A002212D95CE1D00146194 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3A002382D95CE8400146194 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3A002372D95CE8400146194 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3A0022A2D95CE1D00146194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GokuAndFriends_B19/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesito la ubicación del dispositivo para mostrarla en el mapa";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3A0022B2D95CE1D00146194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GokuAndFriends_B19/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesito la ubicación del dispositivo para mostrarla en el mapa";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F3A0022C2D95CE1D00146194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3A0022D2D95CE1D00146194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3A0022F2D95CE1D00146194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GokuAndFriends_B19.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GokuAndFriends_B19";
+			};
+			name = Debug;
+		};
+		F3A002302D95CE1D00146194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GokuAndFriends_B19.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GokuAndFriends_B19";
+			};
+			name = Release;
+		};
+		F3A002322D95CE1D00146194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GokuAndFriends_B19;
+			};
+			name = Debug;
+		};
+		F3A002332D95CE1D00146194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58NTZ2J6FC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.softpmc.GokuAndFriends-B19UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GokuAndFriends_B19;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3A001FB2D95CE1C00146194 /* Build configuration list for PBXProject "GokuAndFriends_B19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A0022C2D95CE1D00146194 /* Debug */,
+				F3A0022D2D95CE1D00146194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A002292D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A0022A2D95CE1D00146194 /* Debug */,
+				F3A0022B2D95CE1D00146194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A0022E2D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A0022F2D95CE1D00146194 /* Debug */,
+				F3A002302D95CE1D00146194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A002312D95CE1D00146194 /* Build configuration list for PBXNativeTarget "GokuAndFriends_B19UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A002322D95CE1D00146194 /* Debug */,
+				F3A002332D95CE1D00146194 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3481F9A2D9C7A4500385A9B /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3481F9B2D9C7A4500385A9B /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3481F9A2D9C7A4500385A9B /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F3A002502D95D42200146194 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F33611052D9B1801009EF9A7 /* Model 2.xcdatamodel */,
+				F3A002512D95D42200146194 /* Model.xcdatamodel */,
+			);
+			currentVersion = F33611052D9B1801009EF9A7 /* Model 2.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3A001F82D95CE1C00146194 /* Project object */;
+}

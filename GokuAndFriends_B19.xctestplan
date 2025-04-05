@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "53431A7A-D3E9-4583-972B-73E75737135B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:GokuAndFriends_B19.xcodeproj",
+      "identifier" : "F3A001FF2D95CE1C00146194",
+      "name" : "GokuAndFriends_B19"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:GokuAndFriends_B19.xcodeproj",
+        "identifier" : "F3A002152D95CE1D00146194",
+        "name" : "GokuAndFriends_B19Tests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:GokuAndFriends_B19.xcodeproj",
+        "identifier" : "F3A0021F2D95CE1D00146194",
+        "name" : "GokuAndFriends_B19UITests"
+      }
+    }
+  ],
+  "version" : 1
+}
