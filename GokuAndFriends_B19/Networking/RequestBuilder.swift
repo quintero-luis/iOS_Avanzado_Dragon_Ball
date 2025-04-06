@@ -57,10 +57,15 @@ struct RequestBuilder {
                 throw .sessionTokenMissed
             }
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
         }
+        
         request .setValue("application/json, charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = endpoint.params()
-        
+        debugPrint(request)
+        debugPrint(endpoint.path())
+        debugPrint("----------")
+        debugPrint(endpoint.params())
         return request
         
         /*
