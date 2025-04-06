@@ -22,14 +22,22 @@ class LoginViewModel {
 }
 class LoginController: UIViewController {
     
-    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
     
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    private var viewModel: LoginViewModel
+    // Ahora se usará el ApiProvider
+    //    private var viewModel: LoginViewModel
+    //    init(viewModel: LoginViewModel = .init() ) {
+    //        self.viewModel = viewModel
+    //        super.init(nibName: String(describing: LoginController.self), bundle: nil)
+    //    }
     
-    init(viewModel: LoginViewModel = .init() ) {
-        self.viewModel = viewModel
+    // MARK: - Api Provider añadido y cambiado por el LoginViewModel
+    private var apiProvider: ApiProvider
+    
+    init(apiProvider: ApiProvider = ApiProvider()) {
+        self.apiProvider = apiProvider
         super.init(nibName: String(describing: LoginController.self), bundle: nil)
     }
     
@@ -40,15 +48,64 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
+    // Al presionar el botón de Login
     @IBAction func loginTapped(_ sender: Any) {
+        // Primera verififacion del login
+        guard let email = userNameTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            showError(message: "Please enter correct email and password")
+            return
+        }
+        
+        
+        print("Email: \(email)")
+            print("Password: \(password)")
         // Tras recibir el token tras el login se guarda en el key chain
-        viewModel.saveToken()
-        let heroesVC = HeroesController()
-        navigationController?.pushViewController(heroesVC, animated: true)
+        //        viewModel.saveToken()
+        apiProvider.authenticateUser(email: email, password: password) { [weak self] result in
+            
+            switch result {
+            case .success(let token):
+                DispatchQueue.main.async {
+                    // Guardar token en el Keychain
+                    self?.saveToken(token: token)
+                    
+                    // Navegar a HeroesController
+                    let heroesVC = HeroesController()
+                    self?.navigationController?.pushViewController(heroesVC, animated: true)
+                }
+                
+            case .failure(_):
+                DispatchQueue.main.async {
+                    //                self?.showError(message: "Intente nuevamente")
+                    print("Email2: \(email)")
+                        print("Password2: \(password)")
+                    self?.showError(message: "Error")
+                }
+            }
+            
+            
+        }
     }
+    
+    
+    // Función para guardar el token en ekl KeyChain
+    private func saveToken(token: String) {
+        // Guardar el token en el kaychain
+        SecureDataProvider().setToken(token)
+    }
+    
+    // Función de mostrar alerta si hay error en el login
+    private func showError(message: String) {
+        // Mostar una alerta
+        let alert = UIAlertController(title: "Credenciales incorrectas", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }

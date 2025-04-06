@@ -17,8 +17,8 @@ struct ApiProvider {
     
     /* init()
      Proporciona valores predeterminados:
-         session usa .shared, que es la sesión compartida de URLSession.
-         requestBuilder usa .init(), lo que crea una nueva instancia de RequestBuilder.
+     session usa .shared, que es la sesión compartida de URLSession.
+     requestBuilder usa .init(), lo que crea una nueva instancia de RequestBuilder.
      Permite personalización: Se pueden inyectar dependencias diferentes al crear una instancia
      (útil para pruebas o configuraciones especiales).
      */
@@ -50,7 +50,16 @@ struct ApiProvider {
         }
     }
     
+    // MARK: - Método de Login
     
+    func authenticateUser(email: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
+        do {
+            let request = try requestBuilder.build(endpoint: .login(email: email, password: password))
+            manageResponse(request: request, completion: completion)
+        } catch {
+            completion(.failure(error))
+        }
+    }
     
     /// Función que usa genéricos (T) de tipo Codable  para reutilizar en llamadas a servicios
     /// El tipo es inferido del completion que pasamos com parámetro
@@ -62,8 +71,12 @@ struct ApiProvider {
             }
             /// Intenta obtener el código de estado HTTP de la respuesta.
             let statusCode = (response as? HTTPURLResponse)?.statusCode
-            
-            guard statusCode == 200 else {
+            print("Código de estado recibido: \(statusCode ?? -1)")
+//            guard statusCode == 200 else {
+//                completion(.failure(.responseError(code: statusCode)))
+//                return
+//            }
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode < 300 else {
                 completion(.failure(.responseError(code: statusCode)))
                 return
             }

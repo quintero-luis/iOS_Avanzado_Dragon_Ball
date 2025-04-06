@@ -18,7 +18,7 @@ protocol SecureDataProtocol {
 // Hace uso de KEychain para guardar la información del token en el llavero del dispositivo
 struct SecureDataProvider: SecureDataProtocol {
     
-    // Constante para hacer referencia al valor del token dr session
+    // Constante para hacer referencia al valor del token de session
     private let keyToken = "keyToken"
     private let keyChain = KeychainSwift()
 
