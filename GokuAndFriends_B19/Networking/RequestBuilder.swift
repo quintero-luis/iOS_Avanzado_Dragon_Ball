@@ -62,10 +62,10 @@ struct RequestBuilder {
         
         request .setValue("application/json, charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = endpoint.params()
-        debugPrint(request)
-        debugPrint(endpoint.path())
+        debugPrint("1-Request: \(request)")
+        debugPrint("2-Endpoint: \(endpoint.path())")
         debugPrint("----------")
-        debugPrint(endpoint.params())
+        debugPrint("3-endpointparams: \(String(describing: endpoint.params()))")
         return request
         
         /*

@@ -38,7 +38,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Login"/>
                             <connections>
-                                <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="O2x-RO-O0R"/>
+                                <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="cik-1X-3Pt"/>
                             </connections>
                         </button>
                     </subviews>

@@ -55,7 +55,10 @@ struct ApiProvider {
     func authenticateUser(email: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
         do {
             let request = try requestBuilder.build(endpoint: .login(email: email, password: password))
+            debugPrint("1-  request \(request)")
+            debugPrint("Email y contraseña en Apiprovider: \(email), \(password)")
             manageResponse(request: request, completion: completion)
+            debugPrint("2-  request \(request)")
         } catch {
             completion(.failure(error))
         }
@@ -72,11 +75,20 @@ struct ApiProvider {
             /// Intenta obtener el código de estado HTTP de la respuesta.
             let statusCode = (response as? HTTPURLResponse)?.statusCode
             print("Código de estado recibido: \(statusCode ?? -1)")
-//            guard statusCode == 200 else {
-//                completion(.failure(.responseError(code: statusCode)))
-//                return
-//            }
+            //            guard statusCode == 200 else {
+            //                completion(.failure(.responseError(code: statusCode)))
+            //                return
+            //            }
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode < 300 else {
+                
+                // Si el código de estado no es exitoso, manejamos el error.
+                if let data = data {
+                    // Aquí intentamos parsear el cuerpo de la respuesta de error
+                    if let errorMessage = String(data: data, encoding: .utf8) {
+                        print("Mensaje de error desde el servidor: \(errorMessage)")
+                    }
+                }
+                
                 completion(.failure(.responseError(code: statusCode)))
                 return
             }
@@ -93,6 +105,5 @@ struct ApiProvider {
                 completion(.failure(.noDataReceived))
             }
         }.resume()
-        
     }
 }
