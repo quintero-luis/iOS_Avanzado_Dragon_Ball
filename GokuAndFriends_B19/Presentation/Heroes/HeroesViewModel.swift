@@ -57,5 +57,4 @@ class HeroesViewModel {
         }
         return heroes[index]
     }
-
 }

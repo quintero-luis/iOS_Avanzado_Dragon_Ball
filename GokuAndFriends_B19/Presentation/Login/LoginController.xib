@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="GokuAndFriends_B19" customModuleProvider="target">
             <connections>
+                <outlet property="passwordTextField" destination="RZT-3V-TPy" id="lj1-ZZ-K2V"/>
+                <outlet property="userNameTextField" destination="8dF-8R-OZo" id="syh-TX-bTr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,22 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rss-5B-KvT">
-                    <rect key="frame" x="163.66666666666666" y="680" width="66" height="35"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Login"/>
-                    <connections>
-                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="O2x-RO-O0R"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bLr-60-sJ3">
+                    <rect key="frame" x="16" y="565" width="361" height="128.33333333333337"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="luisgqr1975@gmail.com" borderStyle="roundedRect" placeholder="email@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dF-8R-OZo">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RZT-3V-TPy">
+                            <rect key="frame" x="0.0" y="47" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rss-5B-KvT">
+                            <rect key="frame" x="0.0" y="94" width="361" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                            <connections>
+                                <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="O2x-RO-O0R"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Rss-5B-KvT" secondAttribute="bottom" constant="103" id="IiY-Z5-vC5"/>
-                <constraint firstItem="Rss-5B-KvT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Yrr-nW-qBB"/>
+                <constraint firstItem="bLr-60-sJ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="WFZ-2L-NGN"/>
+                <constraint firstItem="bLr-60-sJ3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="506" id="ZTG-NO-ACC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bLr-60-sJ3" secondAttribute="trailing" constant="16" id="nE8-Do-hbx"/>
+                <constraint firstItem="bLr-60-sJ3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oPN-51-tNL"/>
             </constraints>
-            <point key="canvasLocation" x="121" y="20"/>
+            <point key="canvasLocation" x="119.84732824427481" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

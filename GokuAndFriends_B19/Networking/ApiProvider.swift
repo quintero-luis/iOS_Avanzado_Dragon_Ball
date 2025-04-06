@@ -51,6 +51,7 @@ struct ApiProvider {
     }
     
     
+    
     /// Función que usa genéricos (T) de tipo Codable  para reutilizar en llamadas a servicios
     /// El tipo es inferido del completion que pasamos com parámetro
     func manageResponse<T: Codable>(request: URLRequest, completion: @escaping (Result<T, GAFError>) -> Void) {

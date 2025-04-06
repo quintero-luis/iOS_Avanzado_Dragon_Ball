@@ -10,10 +10,10 @@ import UIKit
 class SplashController: UIViewController {
     
     private var secureData = SecureDataProvider()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +28,7 @@ class SplashController: UIViewController {
             navigationController?.pushViewController(loginController, animated: true)
         }
     }
-
+}
     /*
     // MARK: - Navigation
 
@@ -39,4 +39,4 @@ class SplashController: UIViewController {
     }
     */
 
-}
+

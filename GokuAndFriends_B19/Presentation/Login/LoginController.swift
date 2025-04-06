@@ -8,7 +8,6 @@
 import UIKit
 
 class LoginViewModel {
-    
     let token = "eyJraWQiOiJwcml2YXRlIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGlmeSI6IjdBQjhBQzRELUFEOEYtNEFDRS1BQTQ1LTIxRTg0QUU4QkJFNyIsImVtYWlsIjoiYmVqbEBrZWVwY29kaW5nLmVzIiwiZXhwaXJhdGlvbiI6NjQwOTIyMTEyMDB9.Dxxy91hTVz3RTF7w1YVTJ7O9g71odRcqgD00gspm30s"
     
     private var secureData: SecureDataProtocol
@@ -22,6 +21,10 @@ class LoginViewModel {
     }
 }
 class LoginController: UIViewController {
+    
+    @IBOutlet var userNameTextField: UITextField!
+    
+    @IBOutlet var passwordTextField: UITextField!
     
     private var viewModel: LoginViewModel
     
@@ -48,5 +51,4 @@ class LoginController: UIViewController {
         let heroesVC = HeroesController()
         navigationController?.pushViewController(heroesVC, animated: true)
     }
-    
 }

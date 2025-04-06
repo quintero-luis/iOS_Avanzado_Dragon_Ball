@@ -33,6 +33,4 @@ struct SecureDataProvider: SecureDataProtocol {
     func clearToken() {
         keyChain.delete(keyToken)
     }
-    
-    
 }

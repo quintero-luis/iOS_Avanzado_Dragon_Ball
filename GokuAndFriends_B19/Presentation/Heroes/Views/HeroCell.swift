@@ -23,5 +23,4 @@ class HeroCell: UICollectionViewCell {
         lbName.text = hero.name
         lbInfo.text = hero.description
     }
-
 }
