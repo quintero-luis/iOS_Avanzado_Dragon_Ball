@@ -52,6 +52,15 @@ class HeroDetailController: UIViewController {
         heroDescriptionLabel.text = viewModel.heroDescription
     }
     
+    // MARK: - Botón de Transformaciones
+    
+    @IBAction func transformationsButtonTapped(_ sender: UIButton) {
+        
+        
+        
+    }
+    
+    
     func listenChangesInViewModel() {
         viewModel.stateChanged = { [weak self] state in
             switch state {

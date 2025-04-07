@@ -2,7 +2,7 @@
 //  MOHero+CoreDataClass.swift
 //  GokuAndFriends_B19
 //
-//  Created by Luis Quintero on 27/3/25.
+//  Created by Luis Quintero on 07/04/25.
 //
 //
 
@@ -20,12 +20,13 @@ extension MOHero {
         return NSFetchRequest<MOHero>(entityName: "Hero")
     }
 
-    @NSManaged public var identifier: String?
-    @NSManaged public var name: String?
-    @NSManaged public var info: String?
-    @NSManaged public var photo: String?
     @NSManaged public var favorite: Bool
+    @NSManaged public var identifier: String?
+    @NSManaged public var info: String?
+    @NSManaged public var name: String?
+    @NSManaged public var photo: String?
     @NSManaged public var locations: Set<MOHeroLocation>?
+    @NSManaged public var transformations: Set<MOHeroTransformations>?
 
 }
 
@@ -46,6 +47,23 @@ extension MOHero {
 
 }
 
+// MARK: Generated accessors for transformations
+extension MOHero {
+
+    @objc(addTransformationsObject:)
+    @NSManaged public func addToTransformations(_ value: MOHeroTransformations)
+
+    @objc(removeTransformationsObject:)
+    @NSManaged public func removeFromTransformations(_ value: MOHeroTransformations)
+
+    @objc(addTransformations:)
+    @NSManaged public func addToTransformations(_ values: Set<MOHeroTransformations>?)
+
+    @objc(removeTransformations:)
+    @NSManaged public func removeFromTransformations(_ values: Set<MOHeroTransformations>?)
+
+}
+
 extension MOHero : Identifiable {
 
 }
@@ -60,6 +78,3 @@ extension MOHero {
              photo: self.photo)
     }
 }
-
-    
-
