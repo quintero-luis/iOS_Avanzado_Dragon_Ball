@@ -55,10 +55,7 @@ struct ApiProvider {
     func authenticateUser(username: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
         do {
             let request = try requestBuilder.build(endpoint: .login(username: username, password: password))
-            debugPrint("1-  request \(request)")
-            debugPrint("Email y contraseña en Apiprovider: \(username), \(password)")
             manageResponse(request: request, completion: completion)
-            debugPrint("2-  request \(request)")
         } catch {
             completion(.failure(error))
         }
@@ -75,10 +72,6 @@ struct ApiProvider {
             /// Intenta obtener el código de estado HTTP de la respuesta.
             let statusCode = (response as? HTTPURLResponse)?.statusCode
             print("Código de estado recibido: \(statusCode ?? -1)")
-            //            guard statusCode == 200 else {
-            //                completion(.failure(.responseError(code: statusCode)))
-            //                return
-            //            }
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode == 200 else {
                 
                 // Si el código de estado no es exitoso, manejamos el error.
@@ -88,7 +81,6 @@ struct ApiProvider {
                         print("Mensaje de error desde el servidor: \(errorMessage)")
                     }
                 }
-                
                 completion(.failure(.responseError(code: statusCode)))
                 return
             }
@@ -100,38 +92,23 @@ struct ApiProvider {
                 return
             }
             
-            // Imprimir los datos recibidos
-            debugPrint("Datos recibidos: \(String(describing: String(data: data, encoding: .utf8)))")
-//            do {
-//                let response = try JSONDecoder().decode(T.self, from: data)
-//                completion(.success(response))
-//            } catch {
-//                completion(.failure(.noDataReceived))
-//            }
-            // Aquí asumimos que la respuesta es un token (String)
-//            if let response = String(data: data, encoding: .utf8) {
-//                        // Regresar el token como resultado
-//                    completion(.success(response as! T))  // Forzamos la conversión a T
-//                    } else {
-//                        completion(.failure(.noDataReceived))
-//                    }
             // Si el endpoint es login, manejar la respuesta como un token (String)
-                    if request.url?.path == GAFEndpoint.login(username: "", password: "").path() {
-                        if let token = String(data: data, encoding: .utf8) {
-                            // Regresar el token como resultado
-                            completion(.success(token as! T))  // Forzamos la conversión a T (String)
-                        } else {
-                            completion(.failure(.noDataReceived))
-                        }
-                    } else {
-                        // Para otros endpoints, decodificamos como antes
-                        do {
-                            let response = try JSONDecoder().decode(T.self, from: data)
-                            completion(.success(response))
-                        } catch {
-                            completion(.failure(.noDataReceived))
-                        }
-                    }
+            if request.url?.path == GAFEndpoint.login(username: "", password: "").path() {
+                if let token = String(data: data, encoding: .utf8) {
+                    // Regresar el token como resultado
+                    completion(.success(token as! T))  // Forzamos la conversión a T (String)
+                } else {
+                    completion(.failure(.noDataReceived))
+                }
+            } else {
+                // Para otros endpoints, decodificamos como antes
+                do {
+                    let response = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(response))
+                } catch {
+                    completion(.failure(.noDataReceived))
+                }
+            }
         }.resume()
     }
 }

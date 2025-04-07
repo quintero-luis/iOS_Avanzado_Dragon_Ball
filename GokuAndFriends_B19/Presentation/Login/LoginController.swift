@@ -8,8 +8,6 @@
 import UIKit
 
 class LoginViewModel {
-    //    let token = "eyJraWQiOiJwcml2YXRlIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGlmeSI6IjdBQjhBQzRELUFEOEYtNEFDRS1BQTQ1LTIxRTg0QUU4QkJFNyIsImVtYWlsIjoiYmVqbEBrZWVwY29kaW5nLmVzIiwiZXhwaXJhdGlvbiI6NjQwOTIyMTEyMDB9.Dxxy91hTVz3RTF7w1YVTJ7O9g71odRcqgD00gspm30s"
-    
     private var secureData: SecureDataProtocol
     
     init(secureData: SecureDataProtocol = SecureDataProvider()) {
@@ -20,6 +18,7 @@ class LoginViewModel {
         secureData.setToken(token)
     }
 }
+
 class LoginController: UIViewController {
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -74,7 +73,7 @@ class LoginController: UIViewController {
             case .success(let token):
                 DispatchQueue.main.async {
                     // Guardar token en el Keychain
-//                    self?.saveToken(token: token)
+                    //                    self?.saveToken(token: token)
                     
                     self?.viewModel.saveToken(token)
                     
@@ -90,7 +89,7 @@ class LoginController: UIViewController {
                     print("Password2: \(password)")
                     self?.showError(message: "Error: \(error.localizedDescription)")
                 }
-            }   
+            }
         }
     }
     
@@ -98,7 +97,7 @@ class LoginController: UIViewController {
     // Función para guardar el token en ekl KeyChain
     private func saveToken(token: String) {
         // Guardar el token en el kaychain
-//        SecureDataProvider().setToken(token)
+        //        SecureDataProvider().setToken(token)
         viewModel.saveToken(token)
     }
     
