@@ -121,6 +121,44 @@ extension StoreDataProvider {
         saveContext()
     }
     
+    // MARK: - Funciones de Transformaciones:
+    
+    // Devuelve una lista de transformaciones aplicando un filtro opcional y orden por nombre
+    func fetchHeroTransformations(filter: NSPredicate?, sortAscending: Bool = true) -> [MOHeroTransformations] {
+        let request = MOHeroTransformations.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(keyPath: \MOHeroTransformations.name, ascending: sortAscending)
+        
+        request.sortDescriptors = [sortDescriptor]
+        request.predicate = filter
+        return (try? context.fetch(request)) ?? []
+    }
+    
+    // Inserta transformaciones de heroes en contexto y persiste en BBDD con saveContext()
+    
+    func insertTransformations(transformations: [ApiHeroTransformation]) {
+        for transformation in transformations {
+            let newTransformation = MOHeroTransformations(context: context)
+            newTransformation.id = transformation.id
+            newTransformation.name = transformation.name
+            newTransformation.info = transformation.description
+            newTransformation.photo = transformation.photo
+            
+            if let id = transformation.hero?.id {
+                let predicate = NSPredicate(format: "id == %@", id)
+                newTransformation.hero = fetchHeroes(filter: predicate).first
+            }
+        }
+        saveContext()
+    }
+    
+    /// Devuelve el número de transformaciones asociadas a un héroe
+    func numTransformations(for hero: MOHero) -> Int {
+        let request = MOHeroTransformations.fetchRequest()
+        request.predicate = NSPredicate(format: "hero == %@", hero)
+        return (try? context.count(for: request)) ?? -1
+    }
+
+    
     // MARK: Transformation añadido
     func clearBBDD() {
         // Quitamos los cambios pendientes que haya en el contexto
