@@ -13,6 +13,9 @@ class HeroDetailController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var heroNameLabel: UILabel!
+    
+    @IBOutlet weak var heroDescriptionLabel: UILabel!
     private var viewModel: HeroDetailViewModel
     private var locationManager: CLLocationManager = .init()
     
@@ -29,6 +32,7 @@ class HeroDetailController: UIViewController {
         mapView.delegate = self
         mapView.pitchButtonVisibility = .visible
         mapView.showsUserLocation = true
+        
     }
     
     
@@ -38,6 +42,14 @@ class HeroDetailController: UIViewController {
         listenChangesInViewModel()
         checkLocationAuthorizationStatus()
         viewModel.loadData()
+        // Mostrar detalle de héroe
+        heroDetails()
+    }
+    
+    // MARK: - Función para nombre y descripción de héroe
+    private func heroDetails() {
+        heroNameLabel.text = viewModel.heroName
+        heroDescriptionLabel.text = viewModel.heroDescription
     }
     
     func listenChangesInViewModel() {

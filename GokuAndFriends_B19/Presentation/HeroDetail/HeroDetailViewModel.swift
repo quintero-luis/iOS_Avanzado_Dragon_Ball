@@ -25,6 +25,18 @@ class HeroDetailViewModel {
         self.useCase = useCase
     }
     
+    // MARK: - Variables para mostrar nobmre y descripcion de héroe
+    
+    var heroName: String {
+        return hero.name ?? ""
+    }
+    
+    var heroDescription: String {
+        return hero.description ?? ""
+    }
+    
+    
+    
     func loadData() {
         useCase.fetchLocationsForHeroWith(id: hero.id) { [weak self]  result in
             switch result {

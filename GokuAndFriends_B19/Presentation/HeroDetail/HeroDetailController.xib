@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailController" customModule="GokuAndFriends_B19" customModuleProvider="target">
             <connections>
+                <outlet property="heroDescriptionLabel" destination="luU-hl-VRx" id="p0E-SA-yb2"/>
+                <outlet property="heroNameLabel" destination="JRh-vx-wCI" id="yp5-p2-vvO"/>
                 <outlet property="mapView" destination="lOw-eg-loD" id="UMS-CY-RDH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,9 +38,9 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-hl-VRx">
-                                    <rect key="frame" x="152.66666666666666" y="896.33333333333326" width="88" height="33.666666666666629"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-hl-VRx">
+                                    <rect key="frame" x="153" y="89" width="87.333333333333314" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -47,8 +49,8 @@
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="940" id="6YQ-aG-qBa"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="centerX" secondItem="dTT-97-85j" secondAttribute="centerX" id="JgP-1J-ElZ"/>
-                                <constraint firstAttribute="bottom" secondItem="luU-hl-VRx" secondAttribute="bottom" constant="10" id="XYT-cE-vb5"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="top" secondItem="dTT-97-85j" secondAttribute="top" constant="8" id="j2Q-qX-faW"/>
+                                <constraint firstItem="luU-hl-VRx" firstAttribute="top" secondItem="JRh-vx-wCI" secondAttribute="top" constant="81" id="luo-xH-GYd"/>
                                 <constraint firstItem="luU-hl-VRx" firstAttribute="centerX" secondItem="dTT-97-85j" secondAttribute="centerX" id="oOi-4t-jOa"/>
                             </constraints>
                         </view>
