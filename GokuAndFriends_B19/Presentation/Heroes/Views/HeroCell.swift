@@ -14,6 +14,8 @@ class HeroCell: UICollectionViewCell {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbInfo: UILabel!
     
+    @IBOutlet weak var heroImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +24,11 @@ class HeroCell: UICollectionViewCell {
     func configureWith(hero: Hero) {
         lbName.text = hero.name
         lbInfo.text = hero.description
+        
+        if let url = URL(string: hero.photo ?? "") {
+            heroImageView.setImage(url: url)
+        } else {
+            heroImageView.image = nil
+        }
     }
 }

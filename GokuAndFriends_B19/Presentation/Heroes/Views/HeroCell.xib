@@ -16,15 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RvJ-cI-MkM">
+                        <rect key="frame" x="12" y="6" width="78" height="68"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UT-4J-C33">
-                        <rect key="frame" x="30" y="15" width="40" height="18"/>
+                        <rect key="frame" x="140" y="4" width="40" height="18"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4k-ON-rbE">
-                        <rect key="frame" x="30.000000000000004" y="39" width="41.333333333333343" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="140" y="28" width="35.333333333333343" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -32,14 +35,20 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="RvJ-cI-MkM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="B1n-Gz-9pE"/>
+                <constraint firstAttribute="bottom" secondItem="RvJ-cI-MkM" secondAttribute="bottom" constant="6" id="E4H-7L-woQ"/>
                 <constraint firstItem="H4k-ON-rbE" firstAttribute="leading" secondItem="9UT-4J-C33" secondAttribute="leading" id="M38-DM-JJR"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H4k-ON-rbE" secondAttribute="trailing" constant="5" id="Vy6-qT-HQr"/>
+                <constraint firstItem="RvJ-cI-MkM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="aQS-cG-WRP"/>
                 <constraint firstItem="H4k-ON-rbE" firstAttribute="top" secondItem="9UT-4J-C33" secondAttribute="bottom" constant="6" id="b9w-Uq-Zpv"/>
-                <constraint firstItem="9UT-4J-C33" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="d1J-Pr-jOS"/>
-                <constraint firstItem="9UT-4J-C33" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="iLO-TF-Tmf"/>
+                <constraint firstItem="9UT-4J-C33" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="140" id="d1J-Pr-jOS"/>
+                <constraint firstItem="9UT-4J-C33" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="iLO-TF-Tmf"/>
+                <constraint firstAttribute="trailing" secondItem="RvJ-cI-MkM" secondAttribute="trailing" constant="280" id="nWN-DA-Gx5"/>
+                <constraint firstItem="RvJ-cI-MkM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="qld-B2-vmY"/>
             </constraints>
             <size key="customSize" width="370" height="50"/>
             <connections>
+                <outlet property="heroImageView" destination="RvJ-cI-MkM" id="a0n-I0-e2y"/>
                 <outlet property="lbInfo" destination="H4k-ON-rbE" id="vE1-mP-7Vf"/>
                 <outlet property="lbName" destination="9UT-4J-C33" id="DoY-Pb-0Pg"/>
             </connections>

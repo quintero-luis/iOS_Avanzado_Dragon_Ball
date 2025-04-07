@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338928322DA3629D0096ABA5 /* UIImage+Remote.swift */; };
 		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
 		F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129652D9EF8A400B65234 /* HeroDetailController.swift */; };
 		F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		338928322DA3629D0096ABA5 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
 		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
 		F30129662D9EF8A400B65234 /* HeroDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailController.xib; sourceTree = "<group>"; };
 		F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338928312DA3628C0096ABA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				338928322DA3629D0096ABA5 /* UIImage+Remote.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F30129632D9EF82900B65234 /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 		F3A0023A2D95CE8400146194 /* GokuAndFriends_B19 */ = {
 			isa = PBXGroup;
 			children = (
+				338928312DA3628C0096ABA5 /* Extensions */,
 				F3A002342D95CE8400146194 /* AppDelegate.swift */,
 				F3A002492D95D07300146194 /* Data */,
 				F3A002662D95F3FE00146194 /* Networking */,
@@ -557,6 +568,7 @@
 				F3A002612D95D96100146194 /* StoreDataProvider.swift in Sources */,
 				F33611012D9B0C2B009EF9A7 /* HeroCell.swift in Sources */,
 				F3481F9E2D9C7C1600385A9B /* SecureDataProvider.swift in Sources */,
+				338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */,
 				F3A0023B2D95CE8400146194 /* AppDelegate.swift in Sources */,
 				F3A002482D95CED100146194 /* LoginController.swift in Sources */,
 				F3A002762D96012D00146194 /* Hero.swift in Sources */,
