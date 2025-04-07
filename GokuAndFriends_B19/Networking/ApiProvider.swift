@@ -52,11 +52,11 @@ struct ApiProvider {
     
     // MARK: - Método de Login
     
-    func authenticateUser(email: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
+    func authenticateUser(username: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
         do {
-            let request = try requestBuilder.build(endpoint: .login(email: email, password: password))
+            let request = try requestBuilder.build(endpoint: .login(username: username, password: password))
             debugPrint("1-  request \(request)")
-            debugPrint("Email y contraseña en Apiprovider: \(email), \(password)")
+            debugPrint("Email y contraseña en Apiprovider: \(username), \(password)")
             manageResponse(request: request, completion: completion)
             debugPrint("2-  request \(request)")
         } catch {
@@ -79,7 +79,7 @@ struct ApiProvider {
             //                completion(.failure(.responseError(code: statusCode)))
             //                return
             //            }
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode < 300 else {
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode == 200 else {
                 
                 // Si el código de estado no es exitoso, manejamos el error.
                 if let data = data {
@@ -95,15 +95,43 @@ struct ApiProvider {
             
             /// Verifica que se haya recibido algún dato en la respuesta.
             guard let data else {
+                debugPrint(data ?? "")
                 completion(.failure(.noDataReceived))
                 return
             }
-            do {
-                let response = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(response))
-            } catch {
-                completion(.failure(.noDataReceived))
-            }
+            
+            // Imprimir los datos recibidos
+            debugPrint("Datos recibidos: \(String(describing: String(data: data, encoding: .utf8)))")
+//            do {
+//                let response = try JSONDecoder().decode(T.self, from: data)
+//                completion(.success(response))
+//            } catch {
+//                completion(.failure(.noDataReceived))
+//            }
+            // Aquí asumimos que la respuesta es un token (String)
+//            if let response = String(data: data, encoding: .utf8) {
+//                        // Regresar el token como resultado
+//                    completion(.success(response as! T))  // Forzamos la conversión a T
+//                    } else {
+//                        completion(.failure(.noDataReceived))
+//                    }
+            // Si el endpoint es login, manejar la respuesta como un token (String)
+                    if request.url?.path == GAFEndpoint.login(username: "", password: "").path() {
+                        if let token = String(data: data, encoding: .utf8) {
+                            // Regresar el token como resultado
+                            completion(.success(token as! T))  // Forzamos la conversión a T (String)
+                        } else {
+                            completion(.failure(.noDataReceived))
+                        }
+                    } else {
+                        // Para otros endpoints, decodificamos como antes
+                        do {
+                            let response = try JSONDecoder().decode(T.self, from: data)
+                            completion(.success(response))
+                        } catch {
+                            completion(.failure(.noDataReceived))
+                        }
+                    }
         }.resume()
     }
 }

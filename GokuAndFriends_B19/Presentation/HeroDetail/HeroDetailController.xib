@@ -33,7 +33,7 @@
                 <constraint firstItem="lOw-eg-loD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t2d-Wn-QsF"/>
                 <constraint firstItem="lOw-eg-loD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tza-aM-D9r"/>
             </constraints>
-            <point key="canvasLocation" x="326" y="13"/>
+            <point key="canvasLocation" x="325.95419847328242" y="12.67605633802817"/>
         </view>
     </objects>
     <resources>

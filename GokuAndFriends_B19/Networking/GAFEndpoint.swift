@@ -21,7 +21,7 @@ enum GAFEndpoint {
     case locations(id: String) // Para obtener la ubicación de un héroe.
     
     // MARK: - Login
-    case login(email: String, password: String) // Para el lgin
+    case login(username: String, password: String) // Para el lgin
     
     
     
@@ -80,8 +80,8 @@ enum GAFEndpoint {
             let data = try? JSONSerialization.data(withJSONObject: attributes)
             return data
             
-        case .login(email: let email, password: let password):
-            let attributes = ["email": email, "password": password]
+        case .login(username: let username, password: let password):
+            let attributes = ["username": username, "password": password]
             // Creamos data a partir de un diccionario
             let data = try? JSONSerialization.data(withJSONObject: attributes)
             return data

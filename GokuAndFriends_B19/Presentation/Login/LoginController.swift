@@ -57,18 +57,18 @@ class LoginController: UIViewController {
     // Al presionar el botón de Login
     @IBAction func loginTapped(_ sender: Any) {
         // Primera verififacion del login
-        guard let email = userNameTextField.text, !email.isEmpty,
+        guard let username = userNameTextField.text, !username.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
             showError(message: "Please enter correct email and password")
             return
         }
         
         
-        print("Email: \(email)")
+        print("Email: \(username)")
         print("Password: \(password)")
         // Tras recibir el token tras el login se guarda en el key chain
         //        viewModel.saveToken()
-        apiProvider.authenticateUser(email: email, password: password) { [weak self] result in
+        apiProvider.authenticateUser(username: username, password: password) { [weak self] result in
             
             switch result {
             case .success(let token):
@@ -83,16 +83,14 @@ class LoginController: UIViewController {
                     self?.navigationController?.pushViewController(heroesVC, animated: true)
                 }
                 
-            case .failure(_):
+            case .failure(let error):
                 DispatchQueue.main.async {
                     //                self?.showError(message: "Intente nuevamente")
-                    print("Email2: \(email)")
+                    print("Email2: \(username)")
                     print("Password2: \(password)")
-                    self?.showError(message: "Error")
+                    self?.showError(message: "Error: \(error.localizedDescription)")
                 }
-            }
-            
-            
+            }   
         }
     }
     
