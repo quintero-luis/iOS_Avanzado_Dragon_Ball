@@ -48,7 +48,7 @@ class HeroTransformationsUseCase: HeroTransformationsUseCaseProtocol {
     }
     
     // Función que obtiene las transformaciones de la base de datos
-    private func storedTransformationsForHero(id: String) -> [HeroTransformation] {
+    private func storedTransformationsForHero(id: String) -> [HeroTransformations] {
         let predicate = NSPredicate(format: "identifier == %@", id)
         
         guard let hero = storedData.fetchHeroes(filter: predicate).first,
@@ -57,6 +57,6 @@ class HeroTransformationsUseCase: HeroTransformationsUseCaseProtocol {
         }
         
         // Mapear los objetos de Core Data a los objetos de dominio
-        return transformations.map({ $0.mapToHeroTransformation() })
+        return transformations.map({ $0.mapToHeroTransformations() })
     }
 }

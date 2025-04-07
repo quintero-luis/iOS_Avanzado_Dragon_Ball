@@ -53,7 +53,10 @@ struct ApiProvider {
     /// Crea solicitud HTTP para obtener las transformaciones de los héroes usando manageResponse
     func fetchTransformationsForHero(id: String, completion: @escaping (Result<[ApiHeroTransformation], GAFError>) -> Void) {
         do {
-            let request = try requestBuilder
+            let request = try requestBuilder.build(endpoint: .transformations(id: id))
+            manageResponse(request: request, completion: completion)
+        } catch {
+            completion(.failure(error))
         }
         
     }
