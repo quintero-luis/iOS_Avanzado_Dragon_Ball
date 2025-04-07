@@ -38,20 +38,28 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-hl-VRx">
-                                    <rect key="frame" x="153" y="89" width="87.333333333333314" height="20.333333333333329"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znd-hq-ZwX">
+                                    <rect key="frame" x="16" y="62.333333333333321" width="360" height="20.333333333333336"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-hl-VRx">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="20.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="360" id="X40-Z1-ms4"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="znd-hq-ZwX" firstAttribute="leading" secondItem="dTT-97-85j" secondAttribute="leading" constant="16" id="41U-Sm-sCh"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="940" id="6YQ-aG-qBa"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="centerX" secondItem="dTT-97-85j" secondAttribute="centerX" id="JgP-1J-ElZ"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="top" secondItem="dTT-97-85j" secondAttribute="top" constant="8" id="j2Q-qX-faW"/>
-                                <constraint firstItem="luU-hl-VRx" firstAttribute="top" secondItem="JRh-vx-wCI" secondAttribute="top" constant="81" id="luo-xH-GYd"/>
-                                <constraint firstItem="luU-hl-VRx" firstAttribute="centerX" secondItem="dTT-97-85j" secondAttribute="centerX" id="oOi-4t-jOa"/>
+                                <constraint firstItem="znd-hq-ZwX" firstAttribute="top" secondItem="JRh-vx-wCI" secondAttribute="bottom" constant="16" id="ynk-Xw-a4C"/>
                             </constraints>
                         </view>
                     </subviews>
