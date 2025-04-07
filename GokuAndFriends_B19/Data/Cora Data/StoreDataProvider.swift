@@ -121,7 +121,7 @@ extension StoreDataProvider {
         saveContext()
     }
     
-    
+    // MARK: Transformation añadido
     func clearBBDD() {
         // Quitamos los cambios pendientes que haya en el contexto
         context.rollback()
@@ -129,8 +129,9 @@ extension StoreDataProvider {
         // creamos los procesos batch de borrado, estos procesos se ejecutan  contra el Store, la BBDD  y no en el contexto.
         let deleteHeroes = NSBatchDeleteRequest(fetchRequest: MOHero.fetchRequest())
         let deleteHeroLocations = NSBatchDeleteRequest(fetchRequest: MOHeroLocation.fetchRequest())
+        let deleteTransformations = NSBatchDeleteRequest(fetchRequest: MOHeroTransformations.fetchRequest())
         
-        for task in [deleteHeroes, deleteHeroLocations] {
+        for task in [deleteHeroes, deleteHeroLocations, deleteTransformations] {
             do {
                 try context.execute(task)
             } catch {

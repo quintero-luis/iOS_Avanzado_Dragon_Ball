@@ -27,9 +27,13 @@ extension MOHeroTransformations {
     @NSManaged public var hero: MOHero?
 
 }
-
+// MARK: - Añadido
 extension MOHeroTransformations {
-    func mapToHeroTransformations() {
-        
+    func mapToHeroTransformations() -> HeroTransformations {
+        HeroTransformations(id: self.id ?? "",
+                            name: self.name,
+                            description: self.description,
+                            photo: self.photo,
+                            hero: self.hero?.mapToHero())
     }
 }
