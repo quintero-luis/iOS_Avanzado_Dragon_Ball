@@ -23,21 +23,24 @@ enum GAFEndpoint {
     // MARK: - Login
     case login(username: String, password: String) // Para el lgin
     
+    // MARK: - Transformations
+    case transformations(id: String) // Para obtener las transformaciones de un héroe.
     
     
-    // MARK: - Modifiqué el switch añadiendo el login
+    
+    // MARK: - Modifiqué el switch añadiendo el login y Transformations
     /// El login es el unico que no va a utilizar el token Clase 5 3:20:00 hrs, todo lo demás va a ir con token
     /// Variable para indiocar si el endpoint debe llevar cabecera de autenticación con el token
     var isAuthoritationREquired: Bool {
         switch self {
-        case .heroes, .locations:
+        case .heroes, .locations, .transformations:
             return true
         case .login:
             return false
         }
     }
     
-    // PaTH DE LOGIN AÑADIDO
+    // PaTH DE LOGIN AÑADIDO y Transformaciones
     /// dragonball.keepcoding.education es el dominio del servidor, y para cosas específicas se usa endpoints
     /// Aquí, "/api/heroes/all" es el endpoint que devuelve la lista de héroes.
     /// Devuelve la ruta específica de cada endpoint.
@@ -49,20 +52,22 @@ enum GAFEndpoint {
             return "/api/heros/locations"
         case .login:
             return "/api/auth/login"
+        case .transformations:
+            return "/api/heros/tranformations"
         }
     }
     
-    // Login añadido
+    // Login añadido y transformations
     /// Devuelve el método HTTP Ambos endpoints usan POST.
     /// Retorna el método como String ("POST").
     func httpMethod() -> String {
         switch self {
-        case .heroes, .locations, .login:
+        case .heroes, .locations, .login, .transformations:
             return HTTPMethods.POST.rawValue
         }
     }
     
-    // Añadí case de Login
+    // Añadí case de Login y Transformations
     /// Devuelve los parámetros en formato JSON (Data)
     /// Convierte los parámetros (name, id) a JSON (Data) para enviarlos en el cuerpo de la solicitud.
     /// Usa JSONSerialization.data(withJSONObject:) para hacer la conversión.
@@ -83,6 +88,11 @@ enum GAFEndpoint {
         case .login(username: let username, password: let password):
             let attributes = ["username": username, "password": password]
             // Creamos data a partir de un diccionario
+            let data = try? JSONSerialization.data(withJSONObject: attributes)
+            return data
+            
+        case .transformations(id: let id):
+            let attributes = ["id": id]
             let data = try? JSONSerialization.data(withJSONObject: attributes)
             return data
         }

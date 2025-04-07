@@ -15,6 +15,7 @@
 		33056B0B2DA48860002C1A83 /* ApiHeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33056B092DA48860002C1A83 /* ApiHeroLocation.swift */; };
 		33056B0D2DA48962002C1A83 /* HeroTransformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33056B0C2DA48959002C1A83 /* HeroTransformations.swift */; };
 		33056B0F2DA48BF1002C1A83 /* ApiHeroTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33056B0E2DA48BE8002C1A83 /* ApiHeroTransformation.swift */; };
+		33056B112DA48FDB002C1A83 /* HeroTransformationUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33056B102DA48FCA002C1A83 /* HeroTransformationUsecase.swift */; };
 		338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338928322DA3629D0096ABA5 /* UIImage+Remote.swift */; };
 		338928392DA368260096ABA5 /* pruebascrollview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338928382DA368260096ABA5 /* pruebascrollview.xib */; };
 		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
@@ -82,6 +83,7 @@
 		33056B092DA48860002C1A83 /* ApiHeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHeroLocation.swift; sourceTree = "<group>"; };
 		33056B0C2DA48959002C1A83 /* HeroTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformations.swift; sourceTree = "<group>"; };
 		33056B0E2DA48BE8002C1A83 /* ApiHeroTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHeroTransformation.swift; sourceTree = "<group>"; };
+		33056B102DA48FCA002C1A83 /* HeroTransformationUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformationUsecase.swift; sourceTree = "<group>"; };
 		338928322DA3629D0096ABA5 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
 		338928382DA368260096ABA5 /* pruebascrollview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pruebascrollview.xib; sourceTree = "<group>"; };
 		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		F33610FB2D9B0832009EF9A7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				33056B102DA48FCA002C1A83 /* HeroTransformationUsecase.swift */,
 				F33610FC2D9B0839009EF9A7 /* HeroesUseCase.swift */,
 				F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */,
 			);
@@ -603,6 +606,7 @@
 				33056B072DA487C8002C1A83 /* MOHero.swift in Sources */,
 				F3A002432D95CEB000146194 /* SplashController.swift in Sources */,
 				F30129712D9F17FA00B65234 /* HeroDetailViewModel.swift in Sources */,
+				33056B112DA48FDB002C1A83 /* HeroTransformationUsecase.swift in Sources */,
 				F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */,
 				F33610FD2D9B0839009EF9A7 /* HeroesUseCase.swift in Sources */,
 				F3A002712D95FF5E00146194 /* HeroesController.swift in Sources */,

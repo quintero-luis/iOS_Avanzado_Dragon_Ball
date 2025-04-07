@@ -50,6 +50,14 @@ struct ApiProvider {
         }
     }
     
+    /// Crea solicitud HTTP para obtener las transformaciones de los héroes usando manageResponse
+    func fetchTransformationsForHero(id: String, completion: @escaping (Result<[ApiHeroTransformation], GAFError>) -> Void) {
+        do {
+            let request = try requestBuilder
+        }
+        
+    }
+    
     // MARK: - Método de Login
     
     func authenticateUser(username: String, password: String, completion: @escaping (Result<String, GAFError>) -> Void) {
