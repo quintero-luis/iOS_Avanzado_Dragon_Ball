@@ -39,11 +39,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znd-hq-ZwX">
-                                    <rect key="frame" x="16" y="62.333333333333321" width="360" height="20.333333333333336"/>
+                                    <rect key="frame" x="16" y="62.333333333333314" width="360" height="23"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-hl-VRx">
-                                            <rect key="frame" x="0.0" y="0.0" width="360" height="20.333333333333332"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -52,13 +52,29 @@
                                         <constraint firstAttribute="width" constant="360" id="X40-Z1-ms4"/>
                                     </constraints>
                                 </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="TJc-e8-OVI" userLabel="ButtonStack">
+                                    <rect key="frame" x="200" y="125.3333333333333" width="169" height="214.66666666666663"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xb-Ct-ocI">
+                                            <rect key="frame" x="0.0" y="0.0" width="169" height="214.66666666666666"/>
+                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Transformaciones"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="TJc-e8-OVI" secondAttribute="trailing" constant="24" id="31c-OA-0SR"/>
                                 <constraint firstItem="znd-hq-ZwX" firstAttribute="leading" secondItem="dTT-97-85j" secondAttribute="leading" constant="16" id="41U-Sm-sCh"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="940" id="6YQ-aG-qBa"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="centerX" secondItem="dTT-97-85j" secondAttribute="centerX" id="JgP-1J-ElZ"/>
+                                <constraint firstAttribute="bottom" secondItem="TJc-e8-OVI" secondAttribute="bottom" constant="600" id="PK8-gK-ZNe"/>
+                                <constraint firstItem="TJc-e8-OVI" firstAttribute="leading" secondItem="dTT-97-85j" secondAttribute="leading" constant="200" id="Wwc-K6-yn1"/>
                                 <constraint firstItem="JRh-vx-wCI" firstAttribute="top" secondItem="dTT-97-85j" secondAttribute="top" constant="8" id="j2Q-qX-faW"/>
+                                <constraint firstItem="TJc-e8-OVI" firstAttribute="top" secondItem="znd-hq-ZwX" secondAttribute="bottom" constant="40" id="lIW-24-Emk"/>
                                 <constraint firstItem="znd-hq-ZwX" firstAttribute="top" secondItem="JRh-vx-wCI" secondAttribute="bottom" constant="16" id="ynk-Xw-a4C"/>
                             </constraints>
                         </view>
@@ -94,6 +110,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
