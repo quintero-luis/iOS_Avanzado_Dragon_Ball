@@ -10,6 +10,8 @@ import Foundation
 
 protocol HeroDetailUseCaseProtocol {
     func fetchLocationsForHeroWith(id: String, completion: @escaping (Result<[HeroLocation], GAFError>) -> Void)
+    // Añadido para transformaciones
+    func fetchTransformationsForHeroWith(id: String, completion: @escaping (Result<[HeroTransformations], GAFError>) -> Void)
 }
 
 class HeroDEtailUseCase: HeroDetailUseCaseProtocol {

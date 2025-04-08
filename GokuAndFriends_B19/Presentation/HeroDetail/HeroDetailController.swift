@@ -68,6 +68,8 @@ class HeroDetailController: UIViewController {
                 self?.addAnnotationsToMAp()
             case .errorLoadingLocation(error: let error):
                 debugPrint(error.localizedDescription)
+            case .errorLoadingTransformations(error: let error):
+                print("")
             }
         }
     }

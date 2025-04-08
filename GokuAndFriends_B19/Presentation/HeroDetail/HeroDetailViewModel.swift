@@ -53,13 +53,16 @@ class HeroDetailViewModel {
         }
         
         // Cargar las transformaciones
-        useCase.fetchTransformationsForHero(id: <#T##String#>, completion: <#T##(Result<[ApiHeroTransformation], GAFError>) -> Void#>)(id: hero.id) { [weak self] result in
-                    switch result {
-                    case .success(let transformations):
-                        self?.transformations = transformations
-                    case .failure(let error):
-                        self?.stateChanged?(.errorLoadingTransformations(error: <#T##GAFError#>))
-                    }
+        useCase.fetchTransformationsForHeroWith(id: hero.id) { [weak self] result in
+            switch result {
+            case .success(let transformations):
+                self?.transformations = transformations
+            case .failure(let error):
+                // Maneja el error si es necesario
+            }
+            
+            
+        }
     }
     
     // Para cargar transformaciones
