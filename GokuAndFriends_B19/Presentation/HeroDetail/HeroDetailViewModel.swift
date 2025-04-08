@@ -10,6 +10,8 @@ import Foundation
 enum HeroDetailState {
     case locationsUpdated
     case errorLoadingLocation(error: GAFError)
+    //Caso para transformacion
+    case errorLoadingTransformations(error: GAFError)
 }
 
 class HeroDetailViewModel {
@@ -17,6 +19,8 @@ class HeroDetailViewModel {
     private var useCase: HeroDetailUseCaseProtocol
     private var locations: [HeroLocation] = []
     private var hero: Hero
+    // Transformaciones añadido
+    private var transformations: [HeroTransformations] = [] // Almacenara las transformaciones
     var stateChanged: ((HeroDetailState) -> Void)?
     
     
@@ -36,7 +40,7 @@ class HeroDetailViewModel {
     }
     
     
-    
+    // Para cargar ubicaciones
     func loadData() {
         useCase.fetchLocationsForHeroWith(id: hero.id) { [weak self]  result in
             switch result {
@@ -47,7 +51,19 @@ class HeroDetailViewModel {
                 self?.stateChanged?(.errorLoadingLocation(error: error))
             }
         }
+        
+        // Cargar las transformaciones
+        useCase.fetchTransformationsForHero(id: <#T##String#>, completion: <#T##(Result<[ApiHeroTransformation], GAFError>) -> Void#>)(id: hero.id) { [weak self] result in
+                    switch result {
+                    case .success(let transformations):
+                        self?.transformations = transformations
+                    case .failure(let error):
+                        self?.stateChanged?(.errorLoadingTransformations(error: <#T##GAFError#>))
+                    }
     }
+    
+    // Para cargar transformaciones
+    
     
     func getHeroLocations() -> [HeroAnnotation] {
         var annotations: [HeroAnnotation] = []
