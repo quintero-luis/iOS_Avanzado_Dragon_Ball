@@ -12,13 +12,14 @@ enum HeroDetailState {
     case errorLoadingLocation(error: GAFError)
     //Caso para transformacion
     case errorLoadingTransformations(error: GAFError)
+    case transformationsUpdated
 }
 
 class HeroDetailViewModel {
     
     private var useCase: HeroDetailUseCaseProtocol
     private var locations: [HeroLocation] = []
-    private var hero: Hero
+    var hero: Hero
     // Transformaciones añadido
     private var transformations: [HeroTransformations] = [] // Almacenara las transformaciones
     var stateChanged: ((HeroDetailState) -> Void)?
@@ -41,7 +42,7 @@ class HeroDetailViewModel {
     
     
     // Para cargar ubicaciones
-    func loadData() {
+    func loadLocations() {
         useCase.fetchLocationsForHeroWith(id: hero.id) { [weak self]  result in
             switch result {
             case .success(let locations):
@@ -52,17 +53,39 @@ class HeroDetailViewModel {
             }
         }
         
+        
+    }
+    
+    // Cargar transformaciones
+    func loadTransformations() {
         // Cargar las transformaciones
         useCase.fetchTransformationsForHeroWith(id: hero.id) { [weak self] result in
             switch result {
             case .success(let transformations):
                 self?.transformations = transformations
+                self?.stateChanged?(.transformationsUpdated)
+                print("Transformations loaded: \(transformations)")
             case .failure(let error):
                 // Maneja el error si es necesario
+                print("Error loading transformations: \(error.localizedDescription)")
+                self?.stateChanged?(.errorLoadingLocation(error: error))
             }
-            
-            
         }
+    }
+    
+    
+    // Numero de transformaciones
+    
+//    func getTransformations() -> [MOHeroTransformations] {
+////        let predicate = NSPredicate(format: "hero.identifier == %@", hero.id)
+////        return StoreDataProvider.shared.fetchHeroTransformations(filter: predicate)
+//        let predicate = NSPredicate(format: "hero.identifier == %@", hero.id)
+//            let transformations = StoreDataProvider.shared.fetchHeroTransformations(filter: predicate)
+//            print("Fetched Transformations: \(transformations)")  // Depuración: imprime las transformaciones obtenidas
+//            return transformations
+//    }
+    func getTransformations() -> [HeroTransformations] {
+        return transformations  // Devuelve las transformaciones almacenadas
     }
     
     // Para cargar transformaciones

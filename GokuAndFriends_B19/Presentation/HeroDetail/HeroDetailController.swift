@@ -9,8 +9,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HeroDetailController: UIViewController {
+protocol HeroDetailControllerDelegate: AnyObject {
+    func didUpdateTransformations()
+}
 
+class HeroDetailController: UIViewController {
+    
+    weak var delegate: HeroDetailControllerDelegate?
+
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var heroNameLabel: UILabel!
@@ -32,7 +39,6 @@ class HeroDetailController: UIViewController {
         mapView.delegate = self
         mapView.pitchButtonVisibility = .visible
         mapView.showsUserLocation = true
-        
     }
     
     
@@ -41,7 +47,9 @@ class HeroDetailController: UIViewController {
         configurateView()
         listenChangesInViewModel()
         checkLocationAuthorizationStatus()
-        viewModel.loadData()
+        viewModel.loadLocations()
+        
+        viewModel.loadTransformations()
         // Mostrar detalle de héroe
         heroDetails()
     }
@@ -55,9 +63,8 @@ class HeroDetailController: UIViewController {
     // MARK: - Botón de Transformaciones
     
     @IBAction func transformationsButtonTapped(_ sender: UIButton) {
-        
-        
-        
+        let transformationsVC = TransformationsController(viewModel: viewModel)
+            navigationController?.pushViewController(transformationsVC, animated: true)
     }
     
     
@@ -69,8 +76,11 @@ class HeroDetailController: UIViewController {
             case .errorLoadingLocation(error: let error):
                 debugPrint(error.localizedDescription)
             case .errorLoadingTransformations(error: let error):
-                print("")
+                debugPrint(error.localizedDescription)
+            case .transformationsUpdated:
+                self?.delegate?.didUpdateTransformations()
             }
+            //self?.tableView.reloadData()
         }
     }
     
