@@ -50,5 +50,4 @@ class HeroesUseCase: HeroesUseCaseProtocol {
         let heroes = storedData.fetchHeroes(filter: nil)
         return heroes.map({$0.mapToHero()})
     }
-    
 }

@@ -40,6 +40,16 @@ struct ApiProvider {
         }
     }
     
+    // Transformations
+    func fetchTransformations(id: String, completion: @escaping (Result<[ApiTransformations], GAFError>) -> Void) {
+        do {
+            let request = try requestBuilder.build(endpoint: .transformations(id: id))
+            manageResponse(request: request, completion: completion)
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
     /// Crea solicitud HTTP para obtener la localización de los héroes usando manageResponse
     func fetchLocationForHeroWith(id: String, completion: @escaping (Result<[ApiHeroLocation], GAFError>) -> Void) {
         do {

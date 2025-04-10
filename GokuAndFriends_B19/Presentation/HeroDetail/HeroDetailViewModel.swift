@@ -10,14 +10,22 @@ import Foundation
 enum HeroDetailState {
     case locationsUpdated
     case errorLoadingLocation(error: GAFError)
+    
 }
 
 class HeroDetailViewModel {
+    private var heroes: [Hero] = []
     
     private var useCase: HeroDetailUseCaseProtocol
+    
     private var locations: [HeroLocation] = []
+    
     private var hero: Hero
+
+    
+    
     var stateChanged: ((HeroDetailState) -> Void)?
+     
     
     
     init(hero: Hero, useCase: HeroDetailUseCaseProtocol = HeroDEtailUseCase()) {
@@ -33,6 +41,10 @@ class HeroDetailViewModel {
     
     var heroDescription: String {
         return hero.description ?? ""
+    }
+    
+    var heroInstance: Hero {
+        return hero
     }
     
     

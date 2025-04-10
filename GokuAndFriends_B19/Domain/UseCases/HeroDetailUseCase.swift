@@ -29,11 +29,15 @@ class HeroDEtailUseCase: HeroDetailUseCaseProtocol {
         if locationsHero.isEmpty {
             
             apiProvider.fetchLocationForHeroWith(id: id) {[weak self] result in
+                
                 switch result {
                 case .success(let locations):
+                    
                     self?.storedData.context.perform {
                         self?.storedData.insert(locations: locations)
+                        
                         let bdLocations = self?.storedLocationsForHeroWith(id: id) ?? []
+                        
                         completion(.success(bdLocations))
                     }
                 case .failure(let error):
@@ -54,4 +58,10 @@ class HeroDEtailUseCase: HeroDetailUseCaseProtocol {
         }
         return locations.map({$0.mapToHeroLocation()})
     }
+    
+    
+    
+    
+    
+    
 }

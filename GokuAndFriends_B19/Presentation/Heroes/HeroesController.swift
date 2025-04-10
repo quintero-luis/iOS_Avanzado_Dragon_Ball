@@ -14,6 +14,7 @@ enum HeroesSections {
 class HeroesController: UIViewController {
 
     typealias DataSource = UICollectionViewDiffableDataSource<HeroesSections, Hero>
+    
     typealias CellRegistration = UICollectionView.CellRegistration<HeroCell , Hero>
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -44,6 +45,7 @@ class HeroesController: UIViewController {
         // identificador ya nos viene en el handler y no necesitamos acceder a él por su indexPath
         let nib = UINib(nibName: HeroCell.identifier, bundle: nil)
         let cellRegistration = CellRegistration(cellNib: nib) { cell, indexPath, hero in
+            
             cell.configureWith(hero: hero)
         }
         
@@ -58,10 +60,13 @@ class HeroesController: UIViewController {
         // Ecuchamos los cambio de estado del viewModel y actualizamos el interfaz
         viewModel.stateChanged = { [weak self] state in
             switch state {
+                
             case .dataUpdated:
                 var snapshot = NSDiffableDataSourceSnapshot<HeroesSections, Hero>()
+                
                 snapshot.appendSections([.main])
                 snapshot.appendItems(self?.viewModel.fetchHeroes() ?? [], toSection: .main)
+                
                 self?.datasource?.applySnapshotUsingReloadData(snapshot)
                 
             case .errorLoadingHeroes(error: let error):
@@ -89,6 +94,7 @@ extension HeroesController: UICollectionViewDelegate, UICollectionViewDelegateFl
         guard let hero = viewModel.heroWith(index: indexPath.row) else {
             return
         }
+        
         let viewModel = HeroDetailViewModel(hero: hero)
         let heroDetail = HeroDetailController(viewModel: viewModel)
         navigationController?.pushViewController(heroDetail, animated: true)
