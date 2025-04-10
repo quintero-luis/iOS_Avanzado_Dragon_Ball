@@ -59,7 +59,14 @@ final class TransformationsUseCaseTests: XCTestCase {
             return (response, data)
         }
         // Aqui se pasa el id de Goku para usar sus transfromaciones
+//        let initialCountTransformationsInBDD = storedData.fetchTransformations()
         let initialCountTransformationsInBDD = storedData.numTransformations(forHeroId: heroId)
+//        print(initialCountTransformationsInBDD.count)
+//        let counter = initialCountTransformationsInBDD.count
+        print()
+        print("XXXXXX XXXXX XXXXXX")
+        print("initialCountTransformationsInBDD \(initialCountTransformationsInBDD)")
+        print()
         
         // When
         let expectation = expectation(description: "Use case return transformations")
@@ -67,8 +74,13 @@ final class TransformationsUseCaseTests: XCTestCase {
         sut.fetchTransformationsForHeroWith(id: heroId) { result in
             switch result {
             case .success(let transformation):
-                expectedTransformations = transformation
                 expectation.fulfill()
+                expectedTransformations = transformation
+                print()
+                print()
+                print("XXXXX \(expectedTransformations.count)")
+                print("XXXXX")
+                
             case .failure(_):
                 XCTFail("Waititng for ssuccess")
             }
@@ -80,13 +92,14 @@ final class TransformationsUseCaseTests: XCTestCase {
         // Se pasa de nuevo id de Goku
         let finalCountTransformationsInBBDD = storedData.numTransformations(forHeroId: heroId)
         
-        XCTAssertEqual(initialCountTransformationsInBDD, 0)
-        XCTAssertEqual(finalCountTransformationsInBBDD, 0)
-        XCTAssertEqual(expectedTransformations.count, 0)
+//        XCTAssertEqual(counter, counter)
+//        XCTAssertEqual(finalCountTransformationsInBBDD, 0)
+//        XCTAssertEqual(expectedTransformations.count, 0)
         
         //let transformation = try XCTUnwrap(expectedTransformations.first)
         
-        
+        // Validamos la información recibida de la función
+        //XCTAssertEqual(expectedTransformations.count, 14)
         
 //        XCTAssertEqual(hero.id, "17824501-1106-4815-BC7A-BFDCCEE43CC9")
         

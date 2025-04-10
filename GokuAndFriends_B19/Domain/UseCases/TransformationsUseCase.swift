@@ -24,18 +24,22 @@ class TransformationsUseCase: TransformationsUseCaseProtocol {
     
     func fetchTransformationsForHeroWith(id: String, completion: @escaping (Result<[HeroTransformations], GAFError>) -> Void) {
         let transformationHero = storedTransformationsForHeroWith(id: id)
+        print()
+        print(transformationHero.count)
             
         if transformationHero.isEmpty {
             apiProvider.fetchTransformations(id: id) { [weak self] result in
-                    
+                print()
+                print(transformationHero.count)
                     switch result {
                     case .success(let transformations):
+                        print(transformations.count)
                         
                         self?.storedData.context.perform {
                             self?.storedData.insertTransformations(transformations: transformations)
                             
                             let bdTransformations = self?.storedTransformationsForHeroWith(id: id) ?? []
-                            
+                            print("adada \(bdTransformations.count)")
                             completion(.success(bdTransformations))
                         }
                     case .failure(let error):

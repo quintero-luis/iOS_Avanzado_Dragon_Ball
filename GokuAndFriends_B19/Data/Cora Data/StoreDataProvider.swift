@@ -99,6 +99,18 @@ extension StoreDataProvider {
         return (try? context.count(for: MOHero.fetchRequest())) ?? -1
     }
     
+    // Número de transformaciones -1 para validar
+    func numTransformations(forHeroId id: String) -> Int {
+        let request = MOHeroTransformations.fetchRequest()
+        request.predicate = NSPredicate(format: "hero.identifier == %@", id)
+        print()
+        print()
+        print(request)
+        print()
+        print()
+        return (try? context.count(for: request)) ?? -1
+    }
+    
     /// Inserta una lista de héroes en la base de datos y guarda los cambios
     // Inserta heroes en contexto y persiste en BBDD con saveContext()
     func insert(heroes: [ApiHero]) {
@@ -130,12 +142,7 @@ extension StoreDataProvider {
         }
     }
     
-    // Número de transformaciones -1 para validar
-    func numTransformations(forHeroId id: String) -> Int {
-        let request = MOHeroTransformations.fetchRequest()
-        request.predicate = NSPredicate(format: "hero.identifier == %@", id)
-        return (try? context.count(for: request)) ?? -1
-    }
+    
     
     // Inserta localizaciones de heroes en contexto y persiste en BBDD con saveContext()
     func insert(locations: [ApiHeroLocation]) {

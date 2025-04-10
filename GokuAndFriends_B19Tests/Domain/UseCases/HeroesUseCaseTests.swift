@@ -74,6 +74,10 @@ final class HeroesUseCaseTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
         
         let finalCountHeroesInBBDD = storedData.numHeroes()
+        print("XXXXXXXXXXXXXX")
+        print(finalCountHeroesInBBDD)
+        print("XXXXXXXXX")
+        print()
         
         XCTAssertEqual(initialCountHeroesInBDD, 0)
         XCTAssertEqual(finalCountHeroesInBBDD, 15)
