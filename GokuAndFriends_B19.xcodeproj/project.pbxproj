@@ -22,6 +22,8 @@
 		338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338928322DA3629D0096ABA5 /* UIImage+Remote.swift */; };
 		33BF1C4F2DA82E0D00C203ED /* TransformationDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */; };
 		33BF1C502DA82E0D00C203ED /* TransformationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */; };
+		33BF1C542DA8422D00C203ED /* TransformationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C532DA8422D00C203ED /* TransformationsUseCaseTests.swift */; };
+		33BF1C562DA84D7800C203ED /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = 33BF1C552DA84D7800C203ED /* Transformations.json */; };
 		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
 		F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129652D9EF8A400B65234 /* HeroDetailController.swift */; };
 		F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */; };
@@ -94,6 +96,8 @@
 		338928322DA3629D0096ABA5 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
 		33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransformationDetailController.swift; path = GokuAndFriends_B19/Presentation/HeroDetail/TransformationDetailController.swift; sourceTree = SOURCE_ROOT; };
 		33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransformationDetailController.xib; path = GokuAndFriends_B19/Presentation/HeroDetail/TransformationDetailController.xib; sourceTree = SOURCE_ROOT; };
+		33BF1C532DA8422D00C203ED /* TransformationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsUseCaseTests.swift; sourceTree = "<group>"; };
+		33BF1C552DA84D7800C203ED /* Transformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Transformations.json; sourceTree = "<group>"; };
 		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
 		F30129662D9EF8A400B65234 /* HeroDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailController.xib; sourceTree = "<group>"; };
 		F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F3481F902D9C584F00385A9B /* Heroes.json */,
+				33BF1C552DA84D7800C203ED /* Transformations.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				F3481F942D9C64A500385A9B /* HeroesUseCaseTests.swift */,
+				33BF1C532DA8422D00C203ED /* TransformationsUseCaseTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3481F912D9C585700385A9B /* Heroes.json in Resources */,
+				33BF1C562DA84D7800C203ED /* Transformations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +659,7 @@
 			files = (
 				F33611132D9B3415009EF9A7 /* MockURLProtocol.swift in Sources */,
 				F3481F952D9C64A500385A9B /* HeroesUseCaseTests.swift in Sources */,
+				33BF1C542DA8422D00C203ED /* TransformationsUseCaseTests.swift in Sources */,
 				F336110A2D9B2588009EF9A7 /* StoreDataProviderTests.swift in Sources */,
 				F3481F992D9C6DDA00385A9B /* HeroesViewModelTests.swift in Sources */,
 				F33611102D9B32EF009EF9A7 /* ApiProviderTest.swift in Sources */,

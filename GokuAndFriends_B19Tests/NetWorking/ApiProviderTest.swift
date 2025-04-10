@@ -160,7 +160,4 @@ final class ApiProviderTest: XCTestCase {
         XCTAssertNotNil(expectedError)
         
     }
-
-
-
 }
