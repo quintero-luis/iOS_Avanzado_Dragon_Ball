@@ -24,14 +24,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOw-eg-loD">
-                    <rect key="frame" x="0.0" y="58.999999999999986" width="360" height="255.66666666666663"/>
+                    <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="255.66666666666663"/>
                     <standardMapConfiguration key="preferredConfiguration"/>
                 </mapView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="znd-hq-ZwX">
-                    <rect key="frame" x="0.0" y="314.66666666666674" width="360" height="503.33333333333326"/>
+                    <rect key="frame" x="0.0" y="314.66666666666674" width="393" height="503.33333333333326"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRh-vx-wCI">
-                            <rect key="frame" x="0.0" y="0.0" width="360" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="1Zc-ed-xQP"/>
                             </constraints>
@@ -40,7 +40,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ged-mC-K7y">
-                            <rect key="frame" x="0.0" y="45" width="360" height="333.33333333333331"/>
+                            <rect key="frame" x="0.0" y="45" width="393" height="333.33333333333331"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" systemColor="labelColor"/>
@@ -48,8 +48,8 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ytL-WP-a1x">
-                            <rect key="frame" x="0.0" y="383.33333333333331" width="360" height="120"/>
-                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <rect key="frame" x="0.0" y="383.33333333333331" width="393" height="120"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="SJ8-0h-Yyl"/>
                             </constraints>
@@ -93,9 +93,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
