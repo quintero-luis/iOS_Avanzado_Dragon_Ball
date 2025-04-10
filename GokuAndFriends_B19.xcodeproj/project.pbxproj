@@ -24,6 +24,7 @@
 		33BF1C502DA82E0D00C203ED /* TransformationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */; };
 		33BF1C542DA8422D00C203ED /* TransformationsUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C532DA8422D00C203ED /* TransformationsUseCaseTests.swift */; };
 		33BF1C562DA84D7800C203ED /* Transformations.json in Resources */ = {isa = PBXBuildFile; fileRef = 33BF1C552DA84D7800C203ED /* Transformations.json */; };
+		33BF1C582DA8540B00C203ED /* TransformationApiProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C572DA8540B00C203ED /* TransformationApiProviderTest.swift */; };
 		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
 		F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129652D9EF8A400B65234 /* HeroDetailController.swift */; };
 		F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */; };
@@ -98,6 +99,7 @@
 		33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransformationDetailController.xib; path = GokuAndFriends_B19/Presentation/HeroDetail/TransformationDetailController.xib; sourceTree = SOURCE_ROOT; };
 		33BF1C532DA8422D00C203ED /* TransformationsUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsUseCaseTests.swift; sourceTree = "<group>"; };
 		33BF1C552DA84D7800C203ED /* Transformations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Transformations.json; sourceTree = "<group>"; };
+		33BF1C572DA8540B00C203ED /* TransformationApiProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationApiProviderTest.swift; sourceTree = "<group>"; };
 		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
 		F30129662D9EF8A400B65234 /* HeroDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailController.xib; sourceTree = "<group>"; };
 		F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				F33611112D9B33F1009EF9A7 /* Mock */,
 				F336110F2D9B32EF009EF9A7 /* ApiProviderTest.swift */,
+				33BF1C572DA8540B00C203ED /* TransformationApiProviderTest.swift */,
 			);
 			path = NetWorking;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F33611132D9B3415009EF9A7 /* MockURLProtocol.swift in Sources */,
+				33BF1C582DA8540B00C203ED /* TransformationApiProviderTest.swift in Sources */,
 				F3481F952D9C64A500385A9B /* HeroesUseCaseTests.swift in Sources */,
 				33BF1C542DA8422D00C203ED /* TransformationsUseCaseTests.swift in Sources */,
 				F336110A2D9B2588009EF9A7 /* StoreDataProviderTests.swift in Sources */,
