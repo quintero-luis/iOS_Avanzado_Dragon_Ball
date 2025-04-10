@@ -85,6 +85,15 @@ extension StoreDataProvider {
         return (try? context.fetch(request)) ?? []
     }
     
+    // Transformaciones
+    func fetchTransformations(filter: NSPredicate? = nil, sortAscending: Bool = true) -> [MOHeroTransformations] {
+        let request = MOHeroTransformations.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(keyPath: \MOHeroTransformations.name, ascending: sortAscending)
+        request.sortDescriptors = [sortDescriptor]
+        request.predicate = filter
+        return (try? context.fetch(request)) ?? []
+    }
+    
     /// Devuelve el número total de héroes en la base de datos
     func numHeroes() -> Int {
         return (try? context.count(for: MOHero.fetchRequest())) ?? -1
@@ -102,6 +111,30 @@ extension StoreDataProvider {
             newHero.favorite = hero.favorite ?? false
         }
         saveContext()
+    }
+    
+    // Transformaciones
+    
+    func insertTransformations(transformations: [ApiTransformations]) {
+        for transformation in transformations {
+            let newTransformation = MOHeroTransformations(context: context)
+            newTransformation.id = transformation.id
+            newTransformation.name = transformation.name
+            newTransformation.info = transformation.description
+            newTransformation.photo = transformation.photo
+            
+            if let identifier = transformation.hero?.id {
+                let predicate = NSPredicate(format: "identifier == %@", identifier)
+                newTransformation.hero = fetchHeroes(filter: predicate).first
+            }
+        }
+    }
+    
+    // Número de transformaciones -1 para validar
+    func numTransformations(forHeroId id: String) -> Int {
+        let request = MOHeroTransformations.fetchRequest()
+        request.predicate = NSPredicate(format: "hero.identifier == %@", id)
+        return (try? context.count(for: request)) ?? -1
     }
     
     // Inserta localizaciones de heroes en contexto y persiste en BBDD con saveContext()

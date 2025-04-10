@@ -7,6 +7,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "02940021-85D3-468B-8F0C-BFC8D6EBC238"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -87,6 +88,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+=======
+>>>>>>> dev
             uuid = "E8BCCCCF-DF62-48AA-8CF7-C122FBF11648"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -98,6 +101,36 @@
             endingLineNumber = "72"
             landmarkName = "loginTapped(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8BCCCCF-DF62-48AA-8CF7-C122FBF11648 - a09beb6632ff5123"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+               <Location
+                  uuid = "E8BCCCCF-DF62-48AA-8CF7-C122FBF11648 - a09beb6632ff5123"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -114,6 +147,64 @@
             endingLineNumber = "70"
             landmarkName = "loginTapped(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "52355E17-79F9-4FAC-9D45-EE7CEB8535F2 - 307ec9edcc452265"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "52355E17-79F9-4FAC-9D45-EE7CEB8535F2 - a09beb6632ff5180"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "52355E17-79F9-4FAC-9D45-EE7CEB8535F2 - eccb80f321b89c9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "52355E17-79F9-4FAC-9D45-EE7CEB8535F2 - d392ba3dace14690"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,6 +285,7 @@
             endingLineNumber = "73"
             landmarkName = "loginTapped(_:)"
             landmarkType = "7">
+<<<<<<< HEAD
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -226,6 +318,38 @@
             endingLineNumber = "88"
             landmarkName = "getTransformations()"
             landmarkType = "7">
+=======
+            <Locations>
+               <Location
+                  uuid = "96BD5572-0910-490F-A570-6D67B95ECF71 - a09beb6632ff5123"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+               <Location
+                  uuid = "96BD5572-0910-490F-A570-6D67B95ECF71 - a09beb6632ff5123"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19.LoginController.loginTapped(Any) -&gt; ()"
+                  moduleName = "GokuAndFriends_B19.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19/Presentation/Login/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+            </Locations>
+>>>>>>> dev
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

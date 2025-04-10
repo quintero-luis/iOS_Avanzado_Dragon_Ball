@@ -10,19 +10,34 @@ import Foundation
 enum HeroDetailState {
     case locationsUpdated
     case errorLoadingLocation(error: GAFError)
+<<<<<<< HEAD
     //Caso para transformacion
     case errorLoadingTransformations(error: GAFError)
     case transformationsUpdated
+=======
+    
+>>>>>>> dev
 }
 
 class HeroDetailViewModel {
+    private var heroes: [Hero] = []
     
     private var useCase: HeroDetailUseCaseProtocol
+    
     private var locations: [HeroLocation] = []
+<<<<<<< HEAD
     var hero: Hero
     // Transformaciones añadido
     private var transformations: [HeroTransformations] = [] // Almacenara las transformaciones
+=======
+    
+    private var hero: Hero
+
+    
+    
+>>>>>>> dev
     var stateChanged: ((HeroDetailState) -> Void)?
+     
     
     
     init(hero: Hero, useCase: HeroDetailUseCaseProtocol = HeroDEtailUseCase()) {
@@ -38,6 +53,10 @@ class HeroDetailViewModel {
     
     var heroDescription: String {
         return hero.description ?? ""
+    }
+    
+    var heroInstance: Hero {
+        return hero
     }
     
     
