@@ -32,7 +32,7 @@ extension MOHeroTransformations {
     func mapToHeroTransformations() -> HeroTransformations {
         HeroTransformations(id: self.id ?? "",
                             name: self.name,
-                            description: self.description,
+                            description: self.info,
                             photo: self.photo,
                             hero: self.hero?.mapToHero())
     }

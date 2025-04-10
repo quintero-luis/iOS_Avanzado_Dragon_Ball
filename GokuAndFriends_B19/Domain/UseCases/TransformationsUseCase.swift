@@ -23,7 +23,6 @@ class TransformationsUseCase: TransformationsUseCaseProtocol {
     
     
     func fetchTransformationsForHeroWith(id: String, completion: @escaping (Result<[HeroTransformations], GAFError>) -> Void) {
-        
         let transformationHero = storedTransformationsForHeroWith(id: id)
             
         if transformationHero.isEmpty {

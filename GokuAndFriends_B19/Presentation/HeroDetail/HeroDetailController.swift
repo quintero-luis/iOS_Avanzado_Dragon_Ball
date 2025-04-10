@@ -9,35 +9,25 @@ import UIKit
 import MapKit
 import CoreLocation
 
-<<<<<<< HEAD
-protocol HeroDetailControllerDelegate: AnyObject {
-    func didUpdateTransformations()
-=======
 enum TransformationSection {
     case main
->>>>>>> dev
 }
 
 class HeroDetailController: UIViewController {
     
-<<<<<<< HEAD
-    weak var delegate: HeroDetailControllerDelegate?
-
-=======
     typealias DataSourceTransformation = UICollectionViewDiffableDataSource<TransformationSection, HeroTransformations>
     
     typealias CellRegistration = UICollectionView.CellRegistration<TransformationCell , HeroTransformations>
     
     // Transformations CollectionView
     @IBOutlet weak var collectionView: UICollectionView!
->>>>>>> dev
     
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var heroNameLabel: UILabel!
     
-    @IBOutlet weak var heroDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var heroDescriptionLabel: UITextView!
+  
     private var viewModel: HeroDetailViewModel
     
     private var transformationViewModel: TransformationsViewModel
@@ -62,11 +52,8 @@ class HeroDetailController: UIViewController {
         mapView.delegate = self
         mapView.pitchButtonVisibility = .visible
         mapView.showsUserLocation = true
-<<<<<<< HEAD
-=======
         
         configure_CollectionView_Transformations()
->>>>>>> dev
     }
     
     
@@ -78,26 +65,6 @@ class HeroDetailController: UIViewController {
         /// Transformations
         listen_States_Changes_In_View_Model_For_Transformations()
         checkLocationAuthorizationStatus()
-<<<<<<< HEAD
-        viewModel.loadLocations()
-        
-        viewModel.loadTransformations()
-        // Mostrar detalle de héroe
-        heroDetails()
-    }
-    
-    // MARK: - Función para nombre y descripción de héroe
-    private func heroDetails() {
-        heroNameLabel.text = viewModel.heroName
-        heroDescriptionLabel.text = viewModel.heroDescription
-    }
-    
-    // MARK: - Botón de Transformaciones
-    
-    @IBAction func transformationsButtonTapped(_ sender: UIButton) {
-        let transformationsVC = TransformationsController(viewModel: viewModel)
-            navigationController?.pushViewController(transformationsVC, animated: true)
-=======
         viewModel.loadData()
         
         
@@ -108,7 +75,6 @@ class HeroDetailController: UIViewController {
         // Mostrar detalle de héroe
         heroDetails()
         
->>>>>>> dev
     }
     
     /// Transformations 1
@@ -121,10 +87,10 @@ class HeroDetailController: UIViewController {
             cell.configureWithTrans(transformation: transformation)
         }
         
-            dataSource = DataSourceTransformation(collectionView: collectionView, cellProvider: {collectionView, indexPath, transformation in
-                collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: transformation)
-            })
-        }
+        dataSource = DataSourceTransformation(collectionView: collectionView, cellProvider: {collectionView, indexPath, transformation in
+            collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: transformation)
+        })
+    }
         
         
         func listen_States_Changes_In_View_Model_For_Transformations() {
@@ -141,19 +107,6 @@ class HeroDetailController: UIViewController {
             
         }
     
-<<<<<<< HEAD
-    func listenChangesInViewModel() {
-        viewModel.stateChanged = { [weak self] state in
-            switch state {
-            case .locationsUpdated:
-                self?.addAnnotationsToMAp()
-            case .errorLoadingLocation(error: let error):
-                debugPrint(error.localizedDescription)
-            case .errorLoadingTransformations(error: let error):
-                debugPrint(error.localizedDescription)
-            case .transformationsUpdated:
-                self?.delegate?.didUpdateTransformations()
-=======
     func updateCollectionView() {
         var snapshot = NSDiffableDataSourceSnapshot<TransformationSection, HeroTransformations>()
         snapshot.appendSections([.main])
@@ -216,9 +169,7 @@ class HeroDetailController: UIViewController {
                 locationManager.startUpdatingLocation()
             @unknown default:
                 break
->>>>>>> dev
             }
-            //self?.tableView.reloadData()
         }
     }
     
@@ -241,12 +192,12 @@ extension HeroDetailController: UICollectionViewDelegate, UICollectionViewDelega
         return CGSize(width: collectionView.bounds.size.width, height: 80.0)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let transformation = transformationViewModel.getTransformations()[indexPath.row]
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransformationCell.identifier, for: indexPath) as! TransformationCell
-            cell.configureWithTrans(transformation: transformation)
-            return cell
-        }
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//            let transformation = transformationViewModel.getTransformations()[indexPath.row]
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransformationCell.identifier, for: indexPath) as! TransformationCell
+//            cell.configureWithTrans(transformation: transformation)
+//            return cell
+//        }
     
     
 }

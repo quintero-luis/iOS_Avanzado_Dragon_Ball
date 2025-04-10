@@ -76,11 +76,7 @@ struct RequestBuilder {
         
         // Configura el cuerpo de la solicitud
         request.httpBody = endpoint.params()
-        
-        debugPrint("1-Request: \(request)")
-        debugPrint("2-Endpoint: \(endpoint.path())")
-        debugPrint("----------")
-        debugPrint("3-endpointparams: \(String(describing: endpoint.params()))")
+
         return request
     }
 }
