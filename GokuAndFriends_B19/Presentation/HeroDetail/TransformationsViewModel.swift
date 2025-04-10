@@ -47,26 +47,7 @@ class TransformationsViewModel {
     }
  
 }
-    
-    
-    
-    
-    
-    
-    
-    
-//    // Transformations
-//    func fetchTransformations() -> [HeroTransformations] {
-//        return  transformations
-//    }
-//
-//    // Contar transformaciones
-//    func transformationsForHero(index: Int) -> HeroTransformations? {
-//        guard index < transformations.count else {
-//            return nil
-//        }
-//        return transformations[index]
-//    }
+
 
 
 

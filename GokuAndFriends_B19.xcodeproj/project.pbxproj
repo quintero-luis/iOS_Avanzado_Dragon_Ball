@@ -20,6 +20,8 @@
 		3359E1C82DA5B41D0053C7D8 /* TransformationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359E1C72DA5B4130053C7D8 /* TransformationsViewModel.swift */; };
 		3359E1CA2DA5B7360053C7D8 /* TransformationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359E1C92DA5B72E0053C7D8 /* TransformationsUseCase.swift */; };
 		338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338928322DA3629D0096ABA5 /* UIImage+Remote.swift */; };
+		33BF1C4F2DA82E0D00C203ED /* TransformationDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */; };
+		33BF1C502DA82E0D00C203ED /* TransformationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */; };
 		F30129672D9EF8A400B65234 /* HeroDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30129662D9EF8A400B65234 /* HeroDetailController.xib */; };
 		F30129682D9EF8A400B65234 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129652D9EF8A400B65234 /* HeroDetailController.swift */; };
 		F301296A2D9F03A500B65234 /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */; };
@@ -90,6 +92,8 @@
 		3359E1C72DA5B4130053C7D8 /* TransformationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsViewModel.swift; sourceTree = "<group>"; };
 		3359E1C92DA5B72E0053C7D8 /* TransformationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsUseCase.swift; sourceTree = "<group>"; };
 		338928322DA3629D0096ABA5 /* UIImage+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Remote.swift"; sourceTree = "<group>"; };
+		33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransformationDetailController.swift; path = GokuAndFriends_B19/Presentation/HeroDetail/TransformationDetailController.swift; sourceTree = SOURCE_ROOT; };
+		33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TransformationDetailController.xib; path = GokuAndFriends_B19/Presentation/HeroDetail/TransformationDetailController.xib; sourceTree = SOURCE_ROOT; };
 		F30129652D9EF8A400B65234 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
 		F30129662D9EF8A400B65234 /* HeroDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailController.xib; sourceTree = "<group>"; };
 		F30129692D9F03A500B65234 /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 			children = (
 				3359E1802DA5A5C70053C7D8 /* TransformationCell.swift */,
 				3359E1812DA5A5C70053C7D8 /* TransformationCell.xib */,
+				33BF1C4D2DA82E0D00C203ED /* TransformationDetailController.swift */,
+				33BF1C4E2DA82E0D00C203ED /* TransformationDetailController.xib */,
 			);
 			path = TransformationCell;
 			sourceTree = "<group>";
@@ -184,9 +190,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		33BF1C442DA82C2200C203ED /* TransformationDetailModal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TransformationDetailModal;
+			sourceTree = "<group>";
+		};
 		F30129632D9EF82900B65234 /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
+				33BF1C442DA82C2200C203ED /* TransformationDetailModal */,
 				3359E17F2DA5A59D0053C7D8 /* TransformationCell */,
 				F301296B2D9F0A4200B65234 /* Views */,
 				F30129652D9EF8A400B65234 /* HeroDetailController.swift */,
@@ -566,6 +580,7 @@
 				F33611022D9B0C2B009EF9A7 /* HeroCell.xib in Resources */,
 				F3A002472D95CED100146194 /* LoginController.xib in Resources */,
 				F3A002722D95FF5E00146194 /* HeroesController.xib in Resources */,
+				33BF1C4F2DA82E0D00C203ED /* TransformationDetailController.xib in Resources */,
 				F3A0023F2D95CE8400146194 /* LaunchScreen.storyboard in Resources */,
 				3359E1822DA5A5C70053C7D8 /* TransformationCell.xib in Resources */,
 				F3A002442D95CEB000146194 /* SplashController.xib in Resources */,
@@ -597,6 +612,7 @@
 				F301296D2D9F0A6200B65234 /* HeroAnnotation.swift in Sources */,
 				F301296F2D9F104200B65234 /* HeroAnnotationView.swift in Sources */,
 				332EA4F92DA5D9610045B657 /* ApiTransformations.swift in Sources */,
+				33BF1C502DA82E0D00C203ED /* TransformationDetailController.swift in Sources */,
 				F33611012D9B0C2B009EF9A7 /* HeroCell.swift in Sources */,
 				F3481F9E2D9C7C1600385A9B /* SecureDataProvider.swift in Sources */,
 				338928332DA362A60096ABA5 /* UIImage+Remote.swift in Sources */,

@@ -62,5 +62,4 @@ class TransformationsUseCase: TransformationsUseCaseProtocol {
         }
         return transformations.map({$0.mapToHeroTransformations()})
     }
-    
 }

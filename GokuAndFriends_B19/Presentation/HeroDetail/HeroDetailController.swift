@@ -77,6 +77,7 @@ class HeroDetailController: UIViewController {
         
     }
     
+    
     /// Transformations 1
     func configure_CollectionView_Transformations() {
         collectionView.delegate = self
@@ -171,6 +172,14 @@ class HeroDetailController: UIViewController {
                 break
             }
         }
+    
+    /// Funci´çon para presentar de forma modal con present el detalle de las transformaciones
+    func showTransformationDetail(transformation: HeroTransformations) {
+        let detailController = TransformationDetailController(nibName: "TransformationDetailController", bundle: nil)
+        detailController.trans = transformation
+        present(detailController, animated: true, completion: nil)
+    }
+    
     }
     
     extension HeroDetailController: MKMapViewDelegate {
@@ -192,13 +201,13 @@ extension HeroDetailController: UICollectionViewDelegate, UICollectionViewDelega
         return CGSize(width: collectionView.bounds.size.width, height: 80.0)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//            let transformation = transformationViewModel.getTransformations()[indexPath.row]
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TransformationCell.identifier, for: indexPath) as! TransformationCell
-//            cell.configureWithTrans(transformation: transformation)
-//            return cell
-//        }
     
+    // Al darle click a una celda de Transformaciones
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedTransformation = transformationViewModel.getTransformations()[indexPath.row]
+        showTransformationDetail(transformation: selectedTransformation)
+    }
     
 }
 
