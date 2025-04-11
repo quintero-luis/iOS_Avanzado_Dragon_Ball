@@ -12,5 +12,6 @@ struct ApiTransformations: Codable {
     let name: String?
     let description: String?
     let photo: String?
-    let hero: ApiHero?
+//    let hero: ApiHero?
+    let hero: Hero?
 }
