@@ -12,7 +12,7 @@ struct ApiHeroLocation: Codable {
     let longitude: String?
     let latitude: String?
     let date: String?
-    let hero: ApiHero?
+    let hero: Hero?
     
     enum CodingKeys: String, CodingKey  {
         case id
@@ -21,7 +21,6 @@ struct ApiHeroLocation: Codable {
         case date = "dateShow"
         case hero
     }
-    
 }
 
 /*

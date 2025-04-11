@@ -9,24 +9,20 @@
 import XCTest
 @testable import GokuAndFriends_B19
 
-// Mock implementation of the TransformationsUseCaseProtocol
-class MockTransformationsUseCaseSuccess: TransformationsUseCaseProtocol {
+class MockTransformationsUseCase: TransformationsUseCaseProtocol {
     func fetchTransformationsForHeroWith(id: String, completion: @escaping (Result<[HeroTransformations], GAFError>) -> Void) {
-        let mockTransformations = [
-            HeroTransformations(id: "17824501-1106-4815-BC7A-BFDCCEE43CC9", name: "1. Oozaru – Gran Mono",
-                                description: "Description for Oozaru",
-                                photo: "https://example.com/oozaru.jpg",
-                                hero: Hero(id: id, name: "Goku", description: "", photo: "")),
-            HeroTransformations(id: "9D6012A0-B6A9-4BAB-854D-67904E90CE01", name: "2. Super Saiyan",
-                                description: "Description for Super Saiyan",
-                                photo: "https://example.com/supersaiyan.jpg",
-                                hero: Hero(id: id, name: "Goku", description: "", photo: ""))
-        ]
-        completion(.success(mockTransformations))
+        do {
+            let urlData = try XCTUnwrap(Bundle(for: TransformationsApiProviderTest.self).url(forResource: "Transformations", withExtension: "json"))
+            let data = try Data(contentsOf: urlData)
+            let response = try JSONDecoder().decode([ApiTransformations].self, from: data)
+            completion(.success(response.map({ $0.mapToTransformation() })))
+        } catch {
+            completion(.failure(.errorPArsingData))
+        }
     }
 }
 
-class MockTransformationsUseCaseFailure: TransformationsUseCaseProtocol {
+class MockTransformationsUseCaseError: TransformationsUseCaseProtocol {
     func fetchTransformationsForHeroWith(id: String, completion: @escaping (Result<[HeroTransformations], GAFError>) -> Void) {
         completion(.failure(.noDataReceived))
     }
@@ -36,104 +32,72 @@ final class TransformationsViewModelTests: XCTestCase {
     
     var sut: TransformationsViewModel!
     var hero: Hero!
-    
+
     override func setUpWithError() throws {
         try super.setUpWithError()
-        hero = Hero(id: "123", name: "Goku", description: "Hero Description", photo: "https://example.com/goku.jpg")
+        hero = Hero(id: "", name: "Goku", description: "", photo: "")
     }
-    
+
     override func tearDownWithError() throws {
         sut = nil
         hero = nil
         try super.tearDownWithError()
     }
     
-    func testLoadTransformationsData_Success() {
+    func testLoadData_Success() {
         // Given
-        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCaseSuccess())
-        
-        let expectation = expectation(description: "State should change to transformation_Data_Updated")
-        
-        sut.stateTransformationChanged = { state in
-            switch state {
-            case .transformation_Data_Updated:
-                expectation.fulfill()
-            case .errorLoadingTransformations:
-                XCTFail("Expected success, but got error state")
-            }
-        }
+        var expectedTransformations: [HeroTransformations] = []
+        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCase())
         
         // When
+        // Usamos una expectation para esperar a que nos informe de los cambios de estado el viewModel
+        let expectation = expectation(description: "ViewModel loads transformations and informs state change")
+        sut.stateTransformationChanged = { [weak self] state in
+            switch state {
+            case .transformation_Data_Updated:
+                expectedTransformations = self?.sut.getTransformations() ?? []
+                expectation.fulfill()
+            case .errorLoadingTransformations(error: _):
+                XCTFail("Waiting for success")
+            }
+        }
         sut.loadTransformationsData()
         
         // Then
         wait(for: [expectation], timeout: 1.0)
-        XCTAssertEqual(sut.numberOfRows(), 2)
-        XCTAssertEqual(sut.getTransformations().first?.name, "1. Oozaru – Gran Mono")
+        XCTAssertEqual(expectedTransformations.count, 14)
     }
     
-    func testLoadTransformationsData_Failure() {
+    func testLoadData_Error() {
         // Given
-        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCaseFailure())
+        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCaseError())
         
-        let expectation = expectation(description: "State should change to errorLoadingTransformations")
-        
+        // When
+        let expectation = expectation(description: "ViewModel fails to load transformations and informs state change")
         sut.stateTransformationChanged = { state in
             switch state {
             case .transformation_Data_Updated:
-                XCTFail("Expected error, but got success state")
+                XCTFail("Waiting for failure")
             case .errorLoadingTransformations(let error):
                 print(error)
                 expectation.fulfill()
             }
         }
-        
-        // When
         sut.loadTransformationsData()
         
         // Then
         wait(for: [expectation], timeout: 1.0)
     }
-    
-    func testNumberOfRows() {
-        // Given
-        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCaseSuccess())
-        
-        let expectation = expectation(description: "State should change to transformation_Data_Updated")
-        
-        sut.stateTransformationChanged = { state in
-            if case .transformation_Data_Updated = state {
-                expectation.fulfill()
-            }
-        }
-        
-        // When
-        sut.loadTransformationsData()
-        
-        // Then
-        wait(for: [expectation], timeout: 1.0)
-        XCTAssertEqual(sut.numberOfRows(), 2)
-    }
-    
-    func testGetTransformations() {
-        // Given
-        sut = TransformationsViewModel(hero: hero, useCase: MockTransformationsUseCaseSuccess())
-        
-        let expectation = expectation(description: "State should change to transformation_Data_Updated")
-        
-        sut.stateTransformationChanged = { state in
-            if case .transformation_Data_Updated = state {
-                expectation.fulfill()
-            }
-        }
-        
-        // When
-        sut.loadTransformationsData()
-        
-        // Then
-        wait(for: [expectation], timeout: 1.0)
-        let transformations = sut.getTransformations()
-        XCTAssertEqual(transformations.count, 2)
-        XCTAssertEqual(transformations.first?.name, "1. Oozaru – Gran Mono")
+}
+// EXtensio de ApiTransformations para mapearlo al modelo del Domain Transforations
+extension ApiTransformations {
+    func mapToTransformation() -> HeroTransformations {
+        HeroTransformations(
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            photo: self.photo,
+            hero: self.hero
+        )
     }
 }

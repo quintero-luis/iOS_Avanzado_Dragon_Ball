@@ -102,7 +102,6 @@ final class LocationsUseCaseTests: XCTestCase {
         XCTAssertEqual(location.longitude, "-2.4746262")
         XCTAssertEqual(location.date, "2022-09-11T00:00:00Z")
     }
-    
 }
 
 
