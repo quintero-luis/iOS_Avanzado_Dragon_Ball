@@ -61,15 +61,6 @@ final class TransformationsApiProviderTest: XCTestCase {
             case .success(let transformations):
                 expectation.fulfill()
                 expectedTransformations = transformations
-                print(" XXXXXXXXXXXXXXXXXXXXXXX")
-                print()
-                print()
-                print()
-                print("Transformaciones \(transformations.count)")
-                print()
-                print()
-                print("XXXXXXXXXXXXXXXXXX")
-                print()
             case .failure(let error):
                 XCTFail("Waiting for success")
             }

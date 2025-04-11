@@ -39,7 +39,6 @@ class TransformationsUseCase: TransformationsUseCaseProtocol {
                             self?.storedData.insertTransformations(transformations: transformations)
                             
                             let bdTransformations = self?.storedTransformationsForHeroWith(id: id) ?? []
-                            print("adada \(bdTransformations.count)")
                             completion(.success(bdTransformations))
                         }
                     case .failure(let error):

@@ -46,9 +46,7 @@ class HeroDetailViewModel {
     var heroInstance: Hero {
         return hero
     }
-    
-    
-    
+
     func loadData() {
         useCase.fetchLocationsForHeroWith(id: hero.id) { [weak self]  result in
             switch result {

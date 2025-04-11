@@ -5,6 +5,8 @@
 //  Created by Luis Quintero on 31/3/25.
 //
 
+import Foundation
+
 
 protocol HeroesUseCaseProtocol {
     func loadHeroes(completion: @escaping (Result<[Hero], GAFError>) -> Void)
@@ -43,7 +45,6 @@ class HeroesUseCase: HeroesUseCaseProtocol {
     
     
     private func loadHeroes() -> [Hero] {
-        
     // Uso de un predicado para filtrar los items en una tabla de la BBDD
 //        let filter = NSPredicate(format: "name CONTAINS[cd] %@", "an")
 //        let heroes = storedData.fetchHeroes(filter: filter)

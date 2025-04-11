@@ -9,7 +9,6 @@ import XCTest
 @testable import GokuAndFriends_B19
 
 final class LocationsUseCaseTests: XCTestCase {
-    
     var sut: HeroDEtailUseCase!
     var storedData: StoreDataProvider!
     var secureData: SecureDataProtocol!
@@ -42,10 +41,13 @@ final class LocationsUseCaseTests: XCTestCase {
 
     func testFetchLocationsForHeroWith_shouldReturnCorrectLocations() throws {
         // Given
+//        var expectedLocations: [HeroLocation] = []
         var expectedLocations: [HeroLocation] = []
+        
         // I del Maestro Roshi
         let heroId = "14BB8E98-6586-4EA7-B4D7-35D6A63F5AA3"
-        
+        let apiHero = ApiHero(id: heroId, name: "Name", description: "", photo: "")
+        storedData.insert(heroes: [apiHero])
         MockURLProtocol.requestHandler = { request in
             let urlData = try XCTUnwrap(Bundle(for: ApiProviderTest.self).url(forResource: "Locations", withExtension: "json"))
             let data = try Data(contentsOf: urlData)

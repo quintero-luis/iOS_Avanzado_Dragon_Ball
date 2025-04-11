@@ -49,6 +49,8 @@ final class TransformationsUseCaseTests: XCTestCase {
         var expectedTransformations: [HeroTransformations] = []
         // Id de Goku
         let heroId = "D13A40E5-4418-4223-9CE6-D2F9A28EBE94"
+        let apiHero = ApiHero(id: heroId, name: "Name", description: "", photo: "")
+        storedData.insert(heroes: [apiHero])
         MockURLProtocol.requestHandler = { request in
                 let urlData = try XCTUnwrap(Bundle(for: ApiProviderTest.self).url(forResource: "Transformations", withExtension: "json"))
                 let data = try Data(contentsOf: urlData)
@@ -92,22 +94,28 @@ final class TransformationsUseCaseTests: XCTestCase {
         // Se pasa de nuevo id de Goku
         let finalCountTransformationsInBBDD = storedData.numTransformations(forHeroId: heroId)
         
-//        XCTAssertEqual(counter, counter)
-//        XCTAssertEqual(finalCountTransformationsInBBDD, 0)
-//        XCTAssertEqual(expectedTransformations.count, 0)
+        XCTAssertEqual(initialCountTransformationsInBDD, 0)
+        XCTAssertEqual(finalCountTransformationsInBBDD, 14)
+        XCTAssertEqual(expectedTransformations.count, 14)
         
-        //let transformation = try XCTUnwrap(expectedTransformations.first)
+        let sortedTransformation = try XCTUnwrap(expectedTransformations.sorted(by: {$0.name ?? "" < $1.name ?? ""}))
+        
+        guard let firstTransformation = sortedTransformation.first else {
+            XCTFail("The transformations array is empty.")
+                return
+        }
+        XCTAssertEqual(firstTransformation.name, "1. Oozaru – Gran Mono")
         
         // Validamos la información recibida de la función
-        //XCTAssertEqual(expectedTransformations.count, 14)
+        XCTAssertEqual(expectedTransformations.count, 14)
         
-//        XCTAssertEqual(hero.id, "17824501-1106-4815-BC7A-BFDCCEE43CC9")
         
-        //XCTAssertEqual("17824501-1106-4815-BC7A-BFDCCEE43CC9", "17824501-1106-4815-BC7A-BFDCCEE43CC9")
+        let transformation = try XCTUnwrap(expectedTransformations.first)
         
-//        let expectedDesc = "Cómo todos los Saiyans con cola, Goku es capaz de convertirse en un mono gigante si mira fijamente a la luna llena. Así es como Goku cuando era un infante liberaba todo su potencial a cambio de perder todo el raciocinio y transformarse en una auténtica bestia. Es por ello que sus amigos optan por cortarle la cola para que no ocurran desgracias, ya que Goku mató a su propio abuelo adoptivo Son Gohan estando en este estado. Después de beber el Agua Ultra Divina, Goku liberó todo su potencial sin necesidad de volver a convertirse en Oozaru"
-//        XCTAssertEqual(transformation.name, "1. Oozaru – Gran Mono")
-//        XCTAssertEqual(transformation.description, expectedDesc)
-//        XCTAssertEqual(transformation.photo, "https://areajugones.sport.es/wp-content/uploads/2021/05/ozarru.jpg.webp")
+        let expectedDesc = "Cómo todos los Saiyans con cola, Goku es capaz de convertirse en un mono gigante si mira fijamente a la luna llena. Así es como Goku cuando era un infante liberaba todo su potencial a cambio de perder todo el raciocinio y transformarse en una auténtica bestia. Es por ello que sus amigos optan por cortarle la cola para que no ocurran desgracias, ya que Goku mató a su propio abuelo adoptivo Son Gohan estando en este estado. Después de beber el Agua Ultra Divina, Goku liberó todo su potencial sin necesidad de volver a convertirse en Oozaru"
+        XCTAssertEqual(transformation.hero?.id, "D13A40E5-4418-4223-9CE6-D2F9A28EBE94")
+        XCTAssertEqual("17824501-1106-4815-BC7A-BFDCCEE43CC9", "17824501-1106-4815-BC7A-BFDCCEE43CC9")
+        XCTAssertEqual(firstTransformation.description, expectedDesc)
+        XCTAssertEqual(firstTransformation.photo, "https://areajugones.sport.es/wp-content/uploads/2021/05/ozarru.jpg.webp")
     }
 }
