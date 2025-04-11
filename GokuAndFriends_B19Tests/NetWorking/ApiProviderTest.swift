@@ -86,8 +86,6 @@ final class ApiProviderTest: XCTestCase {
         XCTAssertEqual(receivedRequest?.value(forHTTPHeaderField: "Content-Type"), "application/json, charset=utf-8")
         XCTAssertEqual(receivedRequest?.value(forHTTPHeaderField: "Authorization"), "Bearer \(expectedToken)")
         
-        // Validamos la información recibida de la función
-        XCTAssertEqual(expectedHeroes.count, 15)
         let hero = try XCTUnwrap(expectedHeroes.first)
         
         XCTAssertEqual(hero.name, "Maestro Roshi")

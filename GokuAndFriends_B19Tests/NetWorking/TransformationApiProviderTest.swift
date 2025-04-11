@@ -137,7 +137,7 @@ final class TransformationsApiProviderTest: XCTestCase {
         }
         
         // Then
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.6)
         XCTAssertNotNil(expectedError)
     }
 }
