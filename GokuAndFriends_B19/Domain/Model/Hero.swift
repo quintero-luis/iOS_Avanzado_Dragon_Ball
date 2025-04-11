@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hero: Hashable {
+struct Hero: Hashable, Codable {
     let id: String
     var favorite: Bool?
     let name: String?

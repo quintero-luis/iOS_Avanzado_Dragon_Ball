@@ -82,36 +82,6 @@
             endingLineNumber = "74"
             landmarkName = "testLoadTransformations_forHeroWithTransformations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "63315C9B-908D-442E-8C7F-8EC1212A42E1 - 3ae957cf247198a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;GokuAndFriends_B19.HeroTransformations&gt;, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49">
-               </Location>
-               <Location
-                  uuid = "63315C9B-908D-442E-8C7F-8EC1212A42E1 - 8c605bacc26c75e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -128,36 +98,6 @@
             endingLineNumber = "75"
             landmarkName = "testLoadTransformations_forHeroWithTransformations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E6AECDD3-3039-4903-B733-D07F2C7EC5DA - 3ae957cf24718412"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;GokuAndFriends_B19.HeroTransformations&gt;, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-               <Location
-                  uuid = "E6AECDD3-3039-4903-B733-D07F2C7EC5DA - 3ae957cf24718412"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;GokuAndFriends_B19.HeroTransformations&gt;, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,36 +114,6 @@
             endingLineNumber = "76"
             landmarkName = "testLoadTransformations_forHeroWithTransformations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "88D7E57A-BD2F-4843-A97C-581BA35C9F48 - 3ae957cf24718412"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;GokuAndFriends_B19.HeroTransformations&gt;, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-               <Location
-                  uuid = "88D7E57A-BD2F-4843-A97C-581BA35C9F48 - 3ae957cf24718412"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;GokuAndFriends_B19.HeroTransformations&gt;, GokuAndFriends_B19.GAFError&gt;) -&gt; () in GokuAndFriends_B19Tests.TransformationsUseCaseTests.testLoadTransformations_forHeroWithTransformations() throws -&gt; ()"
-                  moduleName = "GokuAndFriends_B19Tests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/luisquintero/Desktop/iOS-Avanzado-Dragon-Ball/GokuAndFriends_B19Tests/Domain/UseCases/TransformationsUseCaseTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -331,6 +241,70 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "testLoadTransformations_forHeroWithTransformations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3F30EB2-136A-4B3F-A298-8A74E8F61F99"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GokuAndFriends_B19Tests/Domain/UseCases/LocationsUseCaseTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "testFetchLocationsForHeroWith_shouldReturnCorrectLocations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03371ECC-DDDF-4370-87F9-FB9C8CD9F1F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GokuAndFriends_B19Tests/Domain/UseCases/LocationsUseCaseTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "testFetchLocationsForHeroWith_shouldReturnCorrectLocations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4681A2E-52AD-4385-A400-98289AE96123"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GokuAndFriends_B19Tests/Domain/UseCases/LocationsUseCaseTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "testFetchLocationsForHeroWith_shouldReturnCorrectLocations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9B6C620-E26D-49F3-A09D-BF3FFF48F337"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GokuAndFriends_B19Tests/Domain/UseCases/LocationsUseCaseTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "testFetchLocationsForHeroWith_shouldReturnCorrectLocations()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -58,10 +58,4 @@ class HeroDEtailUseCase: HeroDetailUseCaseProtocol {
         }
         return locations.map({$0.mapToHeroLocation()})
     }
-    
-    
-    
-    
-    
-    
 }

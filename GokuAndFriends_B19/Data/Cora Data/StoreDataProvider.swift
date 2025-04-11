@@ -99,6 +99,13 @@ extension StoreDataProvider {
         return (try? context.count(for: MOHero.fetchRequest())) ?? -1
     }
     
+    // Devuelve el numero total de localizaciones por héroe
+    func numLocations(forHeroId id: String) -> Int {
+            let request = MOHeroLocation.fetchRequest()
+            request.predicate = NSPredicate(format: "hero.identifier == %@", id)
+            return (try? context.count(for: request)) ?? -1
+        }
+    
     // Número de transformaciones -1 para validar
     func numTransformations(forHeroId id: String) -> Int {
         let request = MOHeroTransformations.fetchRequest()

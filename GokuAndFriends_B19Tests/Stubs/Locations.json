@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Maestro Roshi",
+    "dateShow": "2022-09-11T00:00:00Z",
+    "id": "AB3A873C-37B4-4FDE-A50F-8014D40D94FE",
+    "longitud": "-2.4746262",
+    "hero": {
+      "id": "14BB8E98-6586-4EA7-B4D7-35D6A63F5AA3"
+    },
+    "latitud": "36.8415268"
+  },
+
+  {
+    "name": "Mr. Satán",
+    "longitud": "2.0701494",
+    "latitud": "41.3926467",
+    "id": "5B289820-325C-4411-8E8B-F0B61A576437",
+    "dateShow": "2022-09-11T00:00:00Z",
+    "hero": {
+      "id": "1985A353-157F-4C0B-A789-FD5B4F8DABDB"
+    }
+  },
+  {
+    "name": "Mr. Satán",
+    "longitud": "-74.2605503",
+    "latitud": "40.6976684",
+    "id": "ED0F53FB-204A-4151-A3A2-F0FF635E1AB9",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "hero": {
+      "id": "1985A353-157F-4C0B-A789-FD5B4F8DABDB"
+    }
+  },
+
+  {
+    "name": "Krilin",
+    "hero": {
+      "id": "D88BE50B-913D-4EA8-AC42-04D3AF1434E3"
+    },
+    "latitud": "36.8415268",
+    "id": "64B83085-F10C-4550-98F9-0399105B8530",
+    "dateShow": "2022-09-11T00:00:00Z",
+    "longitud": "-2.4746262"
+  },
+  {
+    "name": "Krilin",
+    "hero": {
+      "id": "D88BE50B-913D-4EA8-AC42-04D3AF1434E3"
+    },
+    "latitud": "48.8588336",
+    "id": "612770B8-EEF5-4DFA-9816-E70CD2E26A28",
+    "dateShow": "2022-09-11T00:00:00Z",
+    "longitud": "2.2769956"
+  },
+
+  {
+    "name": "Goku",
+    "id": "36E934EC-C786-4A8F-9C48-A6989BCA929E",
+    "hero": {
+      "id": "D13A40E5-4418-4223-9CE6-D2F9A28EBE94"
+    },
+    "dateShow": "2024-10-20T00:00:00Z",
+    "latitud": "35.71867899343361",
+    "longitud": "139.8202084625344"
+  },
+  {
+    "name": "Goku",
+    "id": "20FA102F-2E47-42DF-899B-CC2848DD0EB3",
+    "hero": {
+      "id": "D13A40E5-4418-4223-9CE6-D2F9A28EBE94"
+    },
+    "dateShow": "2024-10-20T00:00:00Z",
+    "latitud": "38.8202084625344",
+    "longitud": "-77.036"
+  },
+
+  {
+    "name": "Vegeta",
+    "hero": {
+      "id": "6E1B907C-EB3A-45BA-AE03-44FA251F64E9"
+    },
+    "dateShow": "2022-09-11T00:00:00Z",
+    "latitud": "41.909986",
+    "id": "610246EB-CD5B-48AF-9A5D-6C9609A76684",
+    "longitud": "12.3959148"
+  },
+  
+  {
+    "name": "Bulma",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "id": "B5049701-E374-4D03-948C-EEA9DB17A751",
+    "longitud": "2.2768237",
+    "hero": {
+      "id": "64143856-12D8-4EF9-9B6F-F08742098A18"
+    },
+    "latitud": "48.8589465"
+  },
+  {
+    "name": "Bulma",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "id": "4E9DC8DD-E0AF-4B9F-91F8-B634982B2BE5",
+    "longitud": "11.4017525",
+    "hero": {
+      "id": "64143856-12D8-4EF9-9B6F-F08742098A18"
+    },
+    "latitud": "48.1550547"
+  },
+  
+  {
+    "name": "Freezer",
+    "hero": {
+      "id": "D13991A5-6E61-4554-8AA9-D35D0CF3DE58"
+    },
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "-43.7268563",
+    "id": "0DE7CA16-5F60-4091-AFD1-66F29FC82F5F",
+    "latitud": "-22.9132513"
+  },
+
+  {
+    "name": "Beerus",
+    "hero": {
+      "id": "0D17430D-4382-40CA-BDCF-5B87428C92F6"
+    },
+    "id": "066DAA80-E2C5-438B-A2CC-4FE3CB005F5B",
+    "latitud": "52.5069296",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "13.1438677"
+  },
+
+  {
+    "name": "Piccolo",
+    "latitud": "36.1251954",
+    "id": "ACB5ABB7-8C85-4A0F-872C-5467EDD23D7F",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "-115.3154276",
+    "hero": {
+      "id": "CBCFBDEC-F89B-41A1-AC0A-FBDA66A33A06"
+    }
+  },
+
+  {
+    "name": "Kaito",
+    "id": "2A21D376-DE18-4529-A584-033F0891B6BD",
+    "latitud": "-33.8473551",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "150.6511053",
+    "hero": {
+      "id": "FE0AD406-3B22-4A81-9DDF-15444A42B995"
+    }
+  },
+
+  {
+    "name": "Raditz",
+    "id": "156A320F-34E3-4150-A665-7368DBA063C1",
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "-76.0811249",
+    "latitud": "45.2502958",
+    "hero": {
+      "id": "413819B7-82D6-4336-945B-976F9BF04D9F"
+    }
+  },
+  
+  {
+    "name": "Célula",
+    "longitud": "18.058942",
+    "hero": {
+      "id": "EA0D9204-9894-4A86-B7F1-92DDBBC8BD23"
+    },
+    "latitud": "42.645815",
+    "id": "640B6466-28A8-4D07-889F-DE66CF4CBA12",
+    "dateShow": "2022-09-26T00:00:00Z"
+  },
+
+  {
+    "name": "Androide 18",
+    "latitud": "51.5285582",
+    "hero": {
+      "id": "4D386AB5-AF69-45D2-B15A-B1D86B57F9DE"
+    },
+    "dateShow": "2022-09-11T00:00:00Z",
+    "longitud": "-0.2416801",
+    "id": "3171B30A-F331-43E2-A86B-2121C192E66F"
+  },
+  {
+    "name": "Androide 18",
+    "latitud": "50.8552113",
+    "hero": {
+      "id": "4D386AB5-AF69-45D2-B15A-B1D86B57F9DE"
+    },
+    "dateShow": "2022-09-26T00:00:00Z",
+    "longitud": "4.3052058",
+    "id": "57DC67EA-D705-4369-B19C-13CB7EAB14F0"
+  },
+  
+  {
+    "name": "Androide 17",
+    "id": "D860EEAD-A352-4B86-BBC2-99711E901EF6",
+    "longitud": "28.3817362",
+    "hero": {
+      "id": "963CA612-716B-4D08-991E-8B1AFF625A81"
+    },
+    "dateShow": "2022-09-26T00:00:00Z",
+    "latitud": "41.193318"
+  },
+
+  {
+    "name": "Trunks del Futuro",
+    "longitud": "-111.6665081",
+    "latitud": "23.312779",
+    "id": "BD6A7DDA-DE43-48A3-A4BC-222253229E17",
+    "hero": {
+      "id": "6AF516DD-529B-47A5-B3DB-9B88E55432C6"
+    },
+    "dateShow": "2022-09-26T00:00:00Z"
+  },
+  {
+    "name": "Trunks del Futuro",
+    "longitud": "-3.2753782",
+    "latitud": "55.9412846",
+    "id": "272363BD-6C91-4201-82FD-831635A276DF",
+    "hero": {
+      "id": "6AF516DD-529B-47A5-B3DB-9B88E55432C6"
+    },
+    "dateShow": "2022-09-26T00:00:00Z"
+  }
+]

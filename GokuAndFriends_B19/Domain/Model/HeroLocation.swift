@@ -13,7 +13,7 @@ struct HeroLocation {
     let longitude: String?
     let latitude: String?
     let date: String?
-    let hero: Hero?
+    let hero: Hero!
 }
 
 extension HeroLocation {
